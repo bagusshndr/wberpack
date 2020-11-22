@@ -96,7 +96,7 @@
   <link href="<?php echo base_url('assets/img/apple-touch-icon.png" rel="apple-touch-icon'); ?>">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="<?php echo base_url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i'); ?>" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet'); ?>">
@@ -130,7 +130,23 @@
       <ul>
         <li><a href="<?php echo site_url('Welcome/Index'); ?>">Home</a></li>
         <li><a href="<?php echo site_url('Welcome/VAbout'); ?>">About Us</a></li>
-        <li><a href="<?php echo site_url('Welcome/VProduct'); ?>">Product</a></li>
+        <li class="drop-down"><a href="">Product</a>
+          <ul>
+            <?php
+            if (!empty($DataKategori)) {
+              foreach ($DataKategori as $ReadDS) {
+            ?>
+                <li><a href="<?php echo site_url('Welcome/VProduct?kd_kategori=' . $ReadDS->kd_kategori); ?>"><?php echo $ReadDS->nama_kategori; ?></a></li>
+            <?php
+              }
+            }
+            ?>
+            <!-- <li><a href="<?php echo site_url('Welcome/VProduct'); ?>">Honeycomb</a></li>
+            <li><a href="<?php echo site_url('Welcome/VProduct'); ?>">Carton</a></li>
+            <li><a href="<?php echo site_url('Welcome/VProduct'); ?>">Paper Pallet</a></li>
+            <li><a href="<?php echo site_url('Welcome/VProduct'); ?>">Edge Protector</a></li> -->
+          </ul>
+        </li>
         <li><a href="<?php echo site_url('Welcome/VContact'); ?>">Contact Us</a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -150,7 +166,7 @@
         <div class="carousel-inner" role="listbox">
           <!-- Slide 1 -->
           <div class="carousel-item active">
-            <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/1.jpg'); ?>" alt=""></div>
+            <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/3.jpg'); ?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>WBERPACK</span></h2>
@@ -163,7 +179,7 @@
 
           <!-- Slide 2 -->
           <div class="carousel-item">
-            <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/2.jpeg'); ?>" alt=""></div>
+            <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/4.jpg'); ?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">KAMI MENYEDIAKAN KEMASAN YANG ANDA BUTUHKAN</h2>
@@ -175,7 +191,7 @@
 
           <!-- Slide 3 -->
           <div class="carousel-item">
-            <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/slide-3.jpg'); ?>" alt=""></div>
+            <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/5.jpg'); ?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">ABOUT WBERPACK</h2>
