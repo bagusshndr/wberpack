@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Wberpack Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css'); ?>">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="<?php echo base_url('assets/dist/img/favicon1.png" rel="icon'); ?>">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -199,16 +200,42 @@
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="<?php echo site_url('Welcome/DataProduk'); ?>" class="nav-link">
-
-                <i class="nav-icon fas fa-book"></i>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link ">
+                <i class="nav-icon fas fa-table"></i>
                 <p>
-                  Data Produk
+                  Product
+                  <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?php echo site_url('Welcome/DataJenisProduk'); ?>" class="nav-link">
+                    <i class="nav-icon fa fa-bullseye"></i>
+                    <p>
+                      Data Jenis Produk
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo site_url('Welcome/DataKategori'); ?>" class="nav-link">
+                    <i class="nav-icon fa fa-bullseye"></i>
+                    <p>
+                      Data Kategori
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo site_url('Welcome/DataProduk'); ?>" class="nav-link">
+                    <i class="nav-icon fas fa-book"></i>
+                    <p>
+                      Data Produk
+                    </p>
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="<?php echo site_url('Welcome/DataCostumer'); ?>" class="nav-link">
                 <i class="nav-icon fa fa-bullseye"></i>
                 <p>
@@ -231,25 +258,7 @@
                   Data Slide
                 </p>
               </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?php echo site_url('Welcome/DataKategori'); ?>" class="nav-link">
-                <i class="nav-icon fa fa-bullseye"></i>
-                <p>
-                  Data Category
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?php echo site_url('Welcome/DataJenisProduk'); ?>" class="nav-link">
-                <i class="nav-icon fa fa-bullseye"></i>
-                <p>
-                  Data Jenis Produk
-                </p>
-              </a>
-            </li>
-
-
+            </li> -->
             <li class="nav-item">
               <a href="<?php echo site_url('Welcome/Logout'); ?>" class="nav-link" onclick="Logout()">
                 <i class="nav-icon fa fa-arrow-left"></i>
@@ -334,6 +343,8 @@
     function Logout() {
       localStorage.clear();
     }
+  </script>
+  <script>
     $(function() {
       $("#example1").DataTable({
         "responsive": true,

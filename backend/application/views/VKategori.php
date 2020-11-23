@@ -40,7 +40,7 @@
                                      <table class="table table-head-fixed text-nowrap">
                                          <thead>
                                              <tr>
-                                                 <th>Kode Kategori</th>
+                                                 <th>No</th>
                                                  <th>Nama Ketegori</th>
                                                  <th>Tools</th>
                                                  <th>
@@ -51,10 +51,11 @@
                                          <tbody>
                                              <?php
                                                 if (!empty($DataKategori)) {
-                                                    foreach ($DataKategori as $ReadDS) {
+                                                    foreach ($DataKategori as $index => $ReadDS) {
+                                                        $index = $index + 1;
                                                 ?>
                                                      <tr>
-                                                         <td><?php echo $ReadDS->kd_kategori; ?></td>
+                                                         <td><?php echo $index; ?></td>
                                                          <td><?php echo $ReadDS->nama_kategori; ?></td>
 
 
