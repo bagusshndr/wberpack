@@ -43,7 +43,7 @@
                  </div>
              </div>
              <div class="col-lg-6">
-                 <img src="<?php echo base_url('assets/img/about.jpg'); ?>" class="img-fluid" alt="">
+                 <img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-fluid" alt="">
              </div>
          </div>
          <section id="about" class="about1">
@@ -52,7 +52,7 @@
          </section><!-- End About Us Section -->
          <div class="row">
              <div class="col-lg-6">
-                 <img src="<?php echo base_url('assets/img/about.jpg'); ?>" class="img-fluid" alt="">
+                 <img src="<?php echo base_url('assets/img/2.jpg'); ?>" class="img-fluid" alt="">
              </div>
              <div class="col-lg-6 pt-4 pt-lg-0 content">
                  <div class="skills-content">
@@ -76,7 +76,7 @@
                  </div>
              </div>
              <div class="col-lg-6">
-                 <img src="<?php echo base_url('assets/img/about.jpg'); ?>" class="img-fluid" alt="">
+                 <img src="<?php echo base_url('assets/img/3.jpg'); ?>" class="img-fluid" alt="">
              </div>
          </div>
          <!-- <div class="section-title">

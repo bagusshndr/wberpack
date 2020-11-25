@@ -4,7 +4,7 @@
    <div class="content-header">
      <div class="container-fluid">
        <div class="col-sm-6">
-         <h1 class="m-0 text-dark">Data Produk</h1>
+         <h1 class="m-0 text-dark">Data Jenis Produk</h1>
        </div>
      </div><!-- /.container-fluid -->
    </div>
@@ -18,63 +18,51 @@
          <div class="box-header with-border">
            <div class="row">
              <div class="col-12">
-
                <div class="card">
                  <div class="card-header">
                    <a href="<?php echo site_url('Welcome/VFormAddJenisProduk'); ?>" class="btn btn-success">
                      Tambah data
                    </a>
-
-                   <div class="card-tools">
-                     <div class="input-group input-group-sm" style="width: 150px;">
-                       <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                       <div class="input-group-append">
-                         <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                       </div>
-                     </div>
-                   </div>
                  </div>
                  <!-- /.card-header -->
-                 <div class="card-body table-responsive p-0" style="height: 300px;">
-                   <table class="table table-head-fixed text-nowrap">
-                     <thead>
-                       <tr>
-                         <th>Kode Jenis Produk</th>
-                         <th>Jenis Produk</th>
-                         <th>Kategori</th>
-                         <th>Tools</th>
-                         <th>
-                           &nbsp;
-                         </th>
-                       </tr>
-                     </thead>
-                     <tbody>
-                       <?php
-                        if (!empty($DataJenisProduk)) {
-                          foreach ($DataJenisProduk as $ReadDS) {
-                        ?>
-                           <tr>
-                             <td><?php echo $ReadDS->kd_jenis; ?></td>
-                             <td><?php echo $ReadDS->jenis_produk; ?></td>
-                             <td><?php echo $ReadDS->nama_kategori; ?></td>
-                             <td>
-                               <a href="<?php echo site_url('Welcome/DataJenisProduk/' . $ReadDS->kd_jenis . '/view'); ?>" class="btn btn-xs btn-info">
-                                 Edit
-                               </a>
-                               <a href="<?php echo site_url('Welcome/DeleteDataJenisProduk/' . $ReadDS->kd_jenis); ?>" class="btn btn-xs btn-danger">
-                                 Delete
-                               </a>
 
-                             </td>
-                           </tr>
-                       <?php
-                          }
-                        } ?>
+                 <table class="table table-head-fixed text-nowrap">
+                   <thead>
+                     <tr>
+                       <th>No</th>
+                       <th>Jenis Produk</th>
+                       <th>Kategori</th>
+                       <th>Tools</th>
 
-                     </tbody>
-                   </table>
-                 </div>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <?php
+                      if (!empty($DataJenisProduk)) {
+                        foreach ($DataJenisProduk as $index => $ReadDS) {
+                          $index = $index + 1;
+                      ?>
+                         <tr>
+                           <td><?php echo $index; ?></td>
+                           <td><?php echo $ReadDS->jenis_produk; ?></td>
+                           <td><?php echo $ReadDS->nama_kategori; ?></td>
+                           <td>
+                             <a href="<?php echo site_url('Welcome/DataJenisProduk/' . $ReadDS->kd_jenis . '/view'); ?>" class="btn btn-xs btn-info">
+                               Edit
+                             </a>
+                             <a href="<?php echo site_url('Welcome/DeleteDataJenisProduk/' . $ReadDS->kd_jenis); ?>" class="btn btn-xs btn-danger">
+                               Delete
+                             </a>
+
+                           </td>
+                         </tr>
+                     <?php
+                        }
+                      } ?>
+
+                   </tbody>
+                 </table>
+
                  <!-- /.card-body -->
                </div>
                <!-- /.card -->

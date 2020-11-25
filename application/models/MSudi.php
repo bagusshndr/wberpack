@@ -6,14 +6,8 @@ class MSudi extends CI_Model
     function AddData($tabel, $data = array())
     {
         $this->db->insert($tabel, $data);
-        $last_id = $this->db->insert_id();
-        return $last_id;
     }
-    function cek_user($username)
-    {
-        $sql = $this->db->query("SELECT username FROM tb_admin where username='$username'");
-        return $sql->result();
-    }
+
     function UpdateData($tabel, $fieldid, $fieldvalue, $data = array())
     {
         $this->db->where($fieldid, $fieldvalue)->update($tabel, $data);
@@ -29,40 +23,10 @@ class MSudi extends CI_Model
         $query = $this->db->get($tabel);
         return $query->result();
     }
-    function GetDataWithDistinct($tabel)
-    {
-        // $this->db->distinct();
-
-        // $this->db->select('accessid');
-        $query = $this->db->get($tabel);
-        return $query->result();
-    }
 
     function GetDataWhere($tabel, $id, $nilai)
     {
         $this->db->where($id, $nilai);
-        $query = $this->db->get($tabel);
-        return $query;
-    }
-    function GetDataWhereDouble($tabel, $id, $nilai, $id2, $nilai2)
-    {
-        $this->db->where($id, $nilai);
-        $this->db->where($id2, $nilai2);
-        $query = $this->db->get($tabel);
-        return $query;
-    }
-    function GetDataWhere1($tabel, $id, $nilai, $field, $value)
-    {
-        $this->db->where($id, $nilai);
-        $this->db->order_by($field, $value);
-        $query = $this->db->get($tabel);
-        return $query;
-    }
-    function GetDataWhere2($tabel, $id, $nilai, $id1, $nilai1, $field, $value)
-    {
-        $this->db->where($id, $nilai);
-        $this->db->where($id1, $nilai1);
-        $this->db->order_by($field, $value);
         $query = $this->db->get($tabel);
         return $query;
     }
@@ -140,15 +104,5 @@ class MSudi extends CI_Model
         $this->db->like($id, $nilai);
         $query = $this->db->get($table);
         return $query;
-    }
-
-    public function get_keyword($keyword)
-    {
-        $this->db->select('*');
-        $this->db->from('tbl_cuti');
-        $this->db->like('tgl_request', $keyword);
-        $this->db->or_like('requester', $keyword);
-        $this->db->or_like('keterangan', $keyword);
-        return $this->db->get()->result();
     }
 }
