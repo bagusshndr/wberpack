@@ -52,7 +52,7 @@
                                   <p><?php echo $ReadDS->jenis_produk; ?></p>
                               </div>
                               <div class="portfolio-links">
-                                  <a href="<?php echo base_url('assets/img/test.png'); ?>" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                                  <a href="<?php echo base_url('backend/upload/produk/') . $ReadDS->foto; ?>" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
                                   <a href="<?php echo site_url('Welcome/VProductDetail?id=' . $ReadDS->kd_produk); ?>" title="More Details"><i class="bx bx-link"></i></a>
                               </div>
                           </div>

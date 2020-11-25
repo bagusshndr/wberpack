@@ -169,7 +169,7 @@
             <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/3.jpg'); ?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>WBERPACK</span></h2>
+                <h2 class="animate__animated animate__fadeInDown">SELAMAT DATANG DI <span>WBERPACK</span></h2>
                 <p class="animate__animated animate__fadeInUp">PT. Wahana Bermuda Nusantara</p>
                 <a href="product.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get
                   Product</a>
@@ -194,7 +194,7 @@
             <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/5.jpg'); ?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">ABOUT WBERPACK</h2>
+                <h2 class="animate__animated animate__fadeInDown">TENTANG WBERPACK</h2>
                 <p class="animate__animated animate__fadeInUp">Kami bergerak dibidang manufaktur dan distribusi produk. Kami memproduksi produk kemasan berbahan dasar kertas dengan jenis produk Paper Core,
                   Corrugated Carton, Honeycomb, Karton Box, Layer Bundar, Paper Core Tabung, Paper Pallet, dan Edge Protector </p>
                 <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
@@ -267,7 +267,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
+            <!-- <h4>Our Newsletter</h4> -->
 
 
           </div>

@@ -4,7 +4,7 @@
    <div class="content-header">
      <div class="container-fluid">
        <div class="col-sm-6">
-         <h1 class="m-0 text-dark">Data Produk</h1>
+         <h1 class="m-0 text-dark">Data Jenis Produk</h1>
        </div>
      </div><!-- /.container-fluid -->
    </div>
@@ -25,44 +25,44 @@
                    </a>
                  </div>
                  <!-- /.card-header -->
-                 <div class="card-body table-responsive p-0" style="height: 300px;">
-                   <table class="table table-head-fixed text-nowrap">
-                     <thead>
-                       <tr>
-                         <th>No</th>
-                         <th>Jenis Produk</th>
-                         <th>Kategori</th>
-                         <th>Tools</th>
 
-                       </tr>
-                     </thead>
-                     <tbody>
-                       <?php
-                        if (!empty($DataJenisProduk)) {
-                          foreach ($DataJenisProduk as $index => $ReadDS) {
-                            $index = $index + 1;
-                        ?>
-                           <tr>
-                             <td><?php echo $index; ?></td>
-                             <td><?php echo $ReadDS->jenis_produk; ?></td>
-                             <td><?php echo $ReadDS->nama_kategori; ?></td>
-                             <td>
-                               <a href="<?php echo site_url('Welcome/DataJenisProduk/' . $ReadDS->kd_jenis . '/view'); ?>" class="btn btn-xs btn-info">
-                                 Edit
-                               </a>
-                               <a href="<?php echo site_url('Welcome/DeleteDataJenisProduk/' . $ReadDS->kd_jenis); ?>" class="btn btn-xs btn-danger">
-                                 Delete
-                               </a>
+                 <table class="table table-head-fixed text-nowrap">
+                   <thead>
+                     <tr>
+                       <th>No</th>
+                       <th>Jenis Produk</th>
+                       <th>Kategori</th>
+                       <th>Tools</th>
 
-                             </td>
-                           </tr>
-                       <?php
-                          }
-                        } ?>
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <?php
+                      if (!empty($DataJenisProduk)) {
+                        foreach ($DataJenisProduk as $index => $ReadDS) {
+                          $index = $index + 1;
+                      ?>
+                         <tr>
+                           <td><?php echo $index; ?></td>
+                           <td><?php echo $ReadDS->jenis_produk; ?></td>
+                           <td><?php echo $ReadDS->nama_kategori; ?></td>
+                           <td>
+                             <a href="<?php echo site_url('Welcome/DataJenisProduk/' . $ReadDS->kd_jenis . '/view'); ?>" class="btn btn-xs btn-info">
+                               Edit
+                             </a>
+                             <a href="<?php echo site_url('Welcome/DeleteDataJenisProduk/' . $ReadDS->kd_jenis); ?>" class="btn btn-xs btn-danger">
+                               Delete
+                             </a>
 
-                     </tbody>
-                   </table>
-                 </div>
+                           </td>
+                         </tr>
+                     <?php
+                        }
+                      } ?>
+
+                   </tbody>
+                 </table>
+
                  <!-- /.card-body -->
                </div>
                <!-- /.card -->

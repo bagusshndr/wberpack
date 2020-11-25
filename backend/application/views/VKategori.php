@@ -36,46 +36,46 @@
                                      </div>
                                  </div>
                                  <!-- /.card-header -->
-                                 <div class="card-body table-responsive p-0" style="height: 300px;">
-                                     <table class="table table-head-fixed text-nowrap">
-                                         <thead>
-                                             <tr>
-                                                 <th>No</th>
-                                                 <th>Nama Ketegori</th>
-                                                 <th>Tools</th>
-                                                 <th>
-                                                     &nbsp;
-                                                 </th>
-                                             </tr>
-                                         </thead>
-                                         <tbody>
-                                             <?php
-                                                if (!empty($DataKategori)) {
-                                                    foreach ($DataKategori as $index => $ReadDS) {
-                                                        $index = $index + 1;
-                                                ?>
-                                                     <tr>
-                                                         <td><?php echo $index; ?></td>
-                                                         <td><?php echo $ReadDS->nama_kategori; ?></td>
+
+                                 <table class="table table-head-fixed text-nowrap">
+                                     <thead>
+                                         <tr>
+                                             <th>No</th>
+                                             <th>Nama Ketegori</th>
+                                             <th>Tools</th>
+                                             <th>
+                                                 &nbsp;
+                                             </th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <?php
+                                            if (!empty($DataKategori)) {
+                                                foreach ($DataKategori as $index => $ReadDS) {
+                                                    $index = $index + 1;
+                                            ?>
+                                                 <tr>
+                                                     <td><?php echo $index; ?></td>
+                                                     <td><?php echo $ReadDS->nama_kategori; ?></td>
 
 
-                                                         <td>
-                                                             <a href="<?php echo site_url('Welcome/DataKategori/' . $ReadDS->kd_kategori . '/view'); ?>" class="btn btn-xs btn-info">
-                                                                 Edit
-                                                             </a>
-                                                             <a href="<?php echo site_url('Welcome/DeleteDataKategori/' . $ReadDS->kd_kategori); ?>" class="btn btn-xs btn-danger">
-                                                                 Delete
-                                                             </a>
+                                                     <td>
+                                                         <a href="<?php echo site_url('Welcome/DataKategori/' . $ReadDS->kd_kategori . '/view'); ?>" class="btn btn-xs btn-info">
+                                                             Edit
+                                                         </a>
+                                                         <a href="<?php echo site_url('Welcome/DeleteDataKategori/' . $ReadDS->kd_kategori); ?>" class="btn btn-xs btn-danger">
+                                                             Delete
+                                                         </a>
 
-                                                         </td>
-                                                     </tr>
-                                             <?php
-                                                    }
-                                                } ?>
+                                                     </td>
+                                                 </tr>
+                                         <?php
+                                                }
+                                            } ?>
 
-                                         </tbody>
-                                     </table>
-                                 </div>
+                                     </tbody>
+                                 </table>
+
                                  <!-- /.card-body -->
                              </div>
                              <!-- /.card -->

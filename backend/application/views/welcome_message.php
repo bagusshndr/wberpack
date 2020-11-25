@@ -200,7 +200,7 @@
                 </p>
               </a>
             </li>
-            <li class="nav-item has-treeview">
+            <!-- <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link ">
                 <i class="nav-icon fas fa-table"></i>
                 <p>
@@ -208,33 +208,33 @@
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?php echo site_url('Welcome/DataJenisProduk'); ?>" class="nav-link">
-                    <i class="nav-icon fa fa-bullseye"></i>
-                    <p>
-                      Data Jenis Produk
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo site_url('Welcome/DataKategori'); ?>" class="nav-link">
-                    <i class="nav-icon fa fa-bullseye"></i>
-                    <p>
-                      Data Kategori
-                    </p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo site_url('Welcome/DataProduk'); ?>" class="nav-link">
-                    <i class="nav-icon fas fa-book"></i>
-                    <p>
-                      Data Produk
-                    </p>
-                  </a>
-                </li>
-              </ul>
+              <ul class="nav nav-treeview"> -->
+            <li class="nav-item">
+              <a href="<?php echo site_url('Welcome/DataKategori'); ?>" class="nav-link">
+                <i class="nav-icon fa fa-bullseye"></i>
+                <p>
+                  Data Kategori
+                </p>
+              </a>
             </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('Welcome/DataJenisProduk'); ?>" class="nav-link">
+                <i class="nav-icon fa fa-bullseye"></i>
+                <p>
+                  Data Jenis Produk
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('Welcome/DataProduk'); ?>" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Data Produk
+                </p>
+              </a>
+            </li>
+            <!-- </ul>
+            </li> -->
             <!-- <li class="nav-item">
               <a href="<?php echo site_url('Welcome/DataCostumer'); ?>" class="nav-link">
                 <i class="nav-icon fa fa-bullseye"></i>
