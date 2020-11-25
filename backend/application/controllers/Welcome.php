@@ -142,7 +142,7 @@ class Welcome extends CI_Controller
 		// $add['foto_user']= $this->input->post('foto_user');
 		// $add['st_user']= $this->input->post('st_user');  
 
-		$config['upload_path'] = './upload';
+		$config['upload_path'] = '././upload';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
@@ -168,7 +168,7 @@ class Welcome extends CI_Controller
 		//$update['foto_user']= $this->input->post('foto_user');
 		// $update['st_user']= $this->input->post('st_user');
 
-		$config['upload_path'] = './upload';
+		$config['upload_path'] = '././upload';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
@@ -249,7 +249,7 @@ class Welcome extends CI_Controller
 		$add['keterangan'] = $this->input->post('keterangan');
 		$add['is_active'] = 1;
 
-		$config['upload_path'] = './upload/produk';
+		$config['upload_path'] = '././upload/produk';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
@@ -311,6 +311,9 @@ class Welcome extends CI_Controller
 			$tampil = $this->MSudi->GetDataWhere('tbl_slide', 'kd_slide', $kd_slide)->row();
 			$data['detail']['kd_slide'] = $tampil->kd_slide;
 			$data['detail']['foto'] = $tampil->foto;
+			$data['detail']['judul'] = $tampil->judul;
+			$data['detail']['deskripsi'] = $tampil->deskripsi;
+
 			$data['content'] = 'VFormUpdateSlide';
 		} else {
 			$data['DataSlide'] = $this->MSudi->GetData('tbl_slide');
@@ -335,8 +338,9 @@ class Welcome extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['foto'] = $this->session->userdata('foto');
 
-		$add['kd_slide'] = $this->input->post('kd_slide');
-		$add['foto'] = $this->input->post('foto');
+
+		$add['judul'] = $this->input->post('judul');
+		$add['deskripsi'] = $this->input->post('deskripsi');
 
 		$config['upload_path'] = '././upload/slide';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
@@ -358,7 +362,8 @@ class Welcome extends CI_Controller
 
 
 		$kd_slide = $this->input->post('kd_slide');
-		$update['foto'] = $this->input->post('foto');
+		$update['judul'] = $this->input->post('judul');
+		$update['deskripsi'] = $this->input->post('deskripsi');
 
 		$config['upload_path'] = '././upload/slide';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';

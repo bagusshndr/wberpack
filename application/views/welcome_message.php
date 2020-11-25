@@ -165,20 +165,28 @@
         <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide 1 -->
-          <div class="carousel-item active">
-            <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/3.jpg'); ?>" alt=""></div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">SELAMAT DATANG DI <span>WBERPACK</span></h2>
-                <p class="animate__animated animate__fadeInUp">PT. Wahana Bermuda Nusantara</p>
-                <a href="product.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get
-                  Product</a>
+          <?php
+          for ($i = 0; $i < count($slide); $i++) {
+          ?>
+            <div class="carousel-item <?php ($i == 0) ? print 'active' : print ''; ?>">
+              <div class="carousel-background"><img src="<?= base_url('backend/upload/slide/' . $slide[$i]->foto); ?>" alt=""></div>
+              <div class="carousel-container">
+                <div class="carousel-content">
+                  <h2 class="animate__animated animate__fadeInDown"><?= $slide[$i]->judul; ?></h2>
+                  <p class="animate__animated animate__fadeInUp"><?= $slide[$i]->deskripsi; ?></p>
+                  <a href="product.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get
+                    Product</a>
+                </div>
               </div>
             </div>
-          </div>
+
+          <?php
+
+          }
+          ?>
 
           <!-- Slide 2 -->
-          <div class="carousel-item">
+          <!-- <div class="carousel-item active">
             <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/4.jpg'); ?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
@@ -187,10 +195,10 @@
                 <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Slide 3 -->
-          <div class="carousel-item">
+          <!-- <div class="carousel-item">
             <div class="carousel-background"><img src="<?php echo base_url('assets/img/slide/5.jpg'); ?>" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
@@ -200,7 +208,7 @@
                 <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 

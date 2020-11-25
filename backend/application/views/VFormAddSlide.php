@@ -29,6 +29,17 @@
                              <form action="<?php echo site_url('Welcome/AddDataSlide'); ?>" method="post" enctype="multipart/form-data">
                                  <div class="card-body">
                                      <div class="form-group">
+                                         <label>Judul </label>
+                                         <input type="text" name="judul" class="form-control" placeholder="Judul" required>
+                                     </div>
+                                     <div class="box-body pad">
+                                         <label>Deskripsi</label>
+                                         <textarea class="textarea" name="deskripsi" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+
+									</textarea>
+
+                                     </div>
+                                     <div class="form-group">
                                          <label for="exampleInputFile">File input</label>
                                          <input type="file" name="userfile" />
                                          <!-- <p class="help-block">Example block-level help text here.</p> -->

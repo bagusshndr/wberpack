@@ -18,6 +18,16 @@ class Welcome extends CI_Controller
 		$data['DataJenisProduk'] = $this->MSudi->GetData('tbl_jenis_produk');
 		$data['DataKategori'] = $this->MSudi->GetData('tbl_kategori');
 		$data['content'] = 'VHome';
+		// if ($this->uri->segment(4) == 'view') {
+		// $kd_slide = $this->uri->segment(3);
+		$data['slide'] = $this->MSudi->GetData('tbl_slide');
+		// } else {
+		// 	$data['DataSlide'] = $this->MSudi->GetData('tbl_slide');
+		// }
+		// $data['content'] = 'VSlide';
+
+
+
 		$this->load->view('welcome_message', $data);
 		// } else {
 		// 	redirect(site_url('Login'));
@@ -87,6 +97,19 @@ class Welcome extends CI_Controller
 		// }
 	}
 
+	public function AddDataContact()
+	{
+		$add['nama'] = $this->input->post('nama');
+		$add['perusahaan'] = $this->input->post('perusahaan');
+		$add['email'] = $this->input->post('email');
+		$add['number'] = $this->input->post('number');
+		$add['subject'] = $this->input->post('subject');
+		$add['message'] = $this->input->post('message');
+
+
+		$this->MSudi->AddData('tbl_quotation', $add);
+		redirect(site_url('Welcome/VContact'));
+	}
 	public function VProductDetail()
 	{
 		$id = $_GET['id'];
@@ -96,5 +119,8 @@ class Welcome extends CI_Controller
 		$kdKategori = $data['DetailProduk']->kd_kategori;
 		$data['DetailKategori'] = $this->MSudi->GetDataWhere('tbl_kategori', 'kd_kategori', $kdKategori)->row();
 		$this->load->view('VProductDetail', $data);
+	}
+	public function DataSlide()
+	{
 	}
 }

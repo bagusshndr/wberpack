@@ -30,6 +30,14 @@ class MSudi extends CI_Model
         $query = $this->db->get($tabel);
         return $query;
     }
+    function GetDataWhere1($tabel, $id, $nilai, $field, $value)
+    {
+        $this->db->where($id, $nilai);
+        $this->db->order_by($field, $value);
+        $query = $this->db->get($tabel);
+
+        return $query;
+    }
     function GetDataJoin($tbl1, $tbl2, $param)
     {
         $this->db->select('*');

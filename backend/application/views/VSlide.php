@@ -21,7 +21,7 @@
 
                              <div class="card">
                                  <div class="card-header">
-                                     <a href="<?php echo site_url('Welcome/VFormAddslide'); ?>" class="btn btn-success">
+                                     <a href="<?php echo site_url('Welcome/VFormAddSlide'); ?>" class="btn btn-success">
                                          Tambah data
                                      </a>
 
@@ -41,7 +41,8 @@
                                          <thead>
                                              <tr>
                                                  <th>Kode slide</th>
-
+                                                 <th>Judul</th>
+                                                 <th>Deskripsi</th>
                                                  <th>Gambar slide</th>
                                                  <th>Tools</th>
                                                  <th>
@@ -56,6 +57,9 @@
                                                 ?>
                                                      <tr>
                                                          <td><?php echo $ReadDS->kd_slide; ?></td>
+                                                         <td><?php echo $ReadDS->judul; ?></td>
+                                                         <td><?php echo $ReadDS->deskripsi; ?></td>
+
                                                          <td><img width="50px" height="50px" src="<?php echo base_url('upload/slide/') . $ReadDS->foto; ?>"></td>
                                                          <td>
                                                              <a href="<?php echo site_url('Welcome/Dataslide/' . $ReadDS->kd_slide . '/view'); ?>" class="btn btn-xs btn-info">

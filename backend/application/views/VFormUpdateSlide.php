@@ -29,8 +29,20 @@
                              <form action="<?php echo site_url('Welcome/UpdateDataSlide'); ?>" method="post" enctype="multipart/form-data">
                                  <div class="card-body">
                                      <div class="form-group">
+                                         <div class="form-group">
+                                             <label>Judul </label>
+                                             <input type="hidden" name="kd_slide" value="<?php echo $detail['kd_slide']; ?>" class="form-control">
+                                             <input type="text" name="judul" value="<?php echo $detail['judul']; ?>" class="form-control" placeholder="Judul" required>
+                                         </div>
+                                         <div class="box-body pad">
+                                             <label>Deskripsi</label>
+                                             <textarea class="textarea" name="deskripsi" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                         <?php echo $detail['deskripsi']; ?>
+									</textarea>
+
+                                         </div>
                                          <label>Foto Sebelumnya</label><br>
-                                         <input type="hidden" name="kd_slide" class="form-control" value="<?php echo $detail['kd_slide']; ?>">
+
                                          <img src="<?php echo base_url('upload/slide/') . $detail['foto']; ?>" width="200px" height="200px" style="border-radius: 100%;"><br>
                                          <label>Upload Image</label>
                                          <input type="file" name="userfile"><br>
