@@ -50,11 +50,11 @@
                   </div>
 
                   <div class="col-lg-6 d-flex align-items-stretch contact-form-wrap">
-                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                      <form action="<?php echo site_url('Welcome/AddDataContact'); ?>" method="post" enctype="multipart/form-data" class="php-email-form">
                           <div class="form-row">
                               <div class="col-md-6 form-group">
                                   <label for="name">Your Name</label>
-                                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                  <input type="text" name="nama" class="form-control" id="nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                   <div class="validate"></div>
                               </div>
                               <div class="col-md-6 form-group">
@@ -65,13 +65,13 @@
                           </div>
                           <div class="form-row">
                               <div class="col-md-6 form-group">
-                                  <label for="name">Your Number</label>
-                                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                  <label for="number">Your Number</label>
+                                  <input type="number" name="number" class="form-control" id="number" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                   <div class="validate"></div>
                               </div>
                               <div class="col-md-6 form-group">
-                                  <label for="email">Your Company</label>
-                                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                                  <label for="perusahaan">Your Company</label>
+                                  <input type="text" class="form-control" name="perusahaan" id="perusahaan" data-rule="perusahaan" data-msg="Please enter a valid Company" />
                                   <div class="validate"></div>
                               </div>
                           </div>
@@ -85,11 +85,11 @@
                               <textarea class="form-control" name="message" rows="8" data-rule="required" data-msg="Please write something for us"></textarea>
                               <div class="validate"></div>
                           </div>
-                          <div class="mb-3">
+                          <!-- <div class="mb-3">
                               <div class="loading">Loading</div>
                               <div class="error-message"></div>
                               <div class="sent-message">Your message has been sent. Thank you!</div>
-                          </div>
+                          </div> -->
                           <div class="text-center"><button type="submit">Send Message</button></div>
                       </form>
                   </div>

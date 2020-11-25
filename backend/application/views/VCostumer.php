@@ -1,50 +1,107 @@
-<div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-           <div class="box-header">
-              <h3 class="box-title"> Data Costumer</h3>
-              <div class="box-header">
-              <h3 class="box-title"><a href="<?php echo site_url('Welcome/VFormAddCostumer'); ?>"><div class="col-md-3 col-sm-4"><i class="fa fa-fw fa-plus"></i></div></a></h3>
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+   <!-- Content Header (Page header) -->
+   <div class="content-header">
+     <div class="container-fluid">
+       <div class="col-sm-6">
+         <h1 class="m-0 text-dark">Data Costumer</h1>
+       </div>
+     </div><!-- /.container-fluid -->
+   </div>
+   <!-- /.content-header -->
 
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+   <!-- Main content -->
+   <section class="content">
+     <div class="container-fluid">
+       <!-- Small boxes (Stat box) -->
+       <div class="box">
+         <div class="box-header with-border">
+           <div class="row">
+             <div class="col-12">
 
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <tr>
-                  <th>Kode Costumer</th>
-                  
-                  <th>Gambar Costumer</th>
-                  
-                  <th>Tools</th>
-                </tr>
-                <?php
-	if(!empty($DataCostumer))
-	{
-		foreach($DataCostumer as $ReadDS)
-		{
-	?>
-      <tr>
-         <td><?php echo $ReadDS->kd_costumer; ?></td>
-          <td ><img width="50px" height="50px" src="<?php echo base_url('upload/costumer/'). $ReadDS->foto; ?>"></td>
-          
-					
-           <td>
-					<a href="<?php echo site_url('Welcome/DataCostumer/'.$ReadDS->kd_costumer.'/view') ?>"><i class="fa fa-edit"></i></a>
-					<a href="<?php echo site_url('Welcome/DeleteDataCostumer/'.$ReadDS->kd_costumer) ?>"><i class="fa fa-fw fa-trash"></i></a>
-					</td>
-      </tr>
-                <?php		
-		}
-	}
-	?>
-              </table>
-            </div>
+               <div class="card">
+                 <div class="card-header">
+                   <a href="<?php echo site_url('Welcome/VFormAddCostumer'); ?>" class="btn btn-success">
+                     Tambah data
+                   </a>
+
+                   <div class="card-tools">
+                     <div class="input-group input-group-sm" style="width: 150px;">
+                       <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                       <div class="input-group-append">
+                         <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                 <!-- /.card-header -->
+                 <div class="card-body table-responsive p-0" style="height: 300px;">
+                   <table class="table table-head-fixed text-nowrap">
+                     <thead>
+                       <tr>
+                         <th>Kode Costumer</th>
+
+                         <th>Gambar Costumer</th>
+
+                         <th>Tools</th>
+                         <th>
+                           &nbsp;
+                         </th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <?php
+                        if (!empty($DataCostumer)) {
+                          foreach ($DataCostumer as $ReadDS) {
+                        ?>
+                           <tr>
+                             <td><?php echo $ReadDS->kd_costumer; ?></td>
+                             <td><img width="50px" height="50px" src="<?php echo base_url('upload/costumer/') . $ReadDS->foto; ?>"></td>
+                             <td>
+                               <a href="<?php echo site_url('Welcome/DataCostumer/' . $ReadDS->kd_costumer . '/view'); ?>" class="btn btn-xs btn-info">
+                                 Edit
+                               </a>
+                               <a href="<?php echo site_url('Welcome/DeleteDataCostumer/' . $ReadDS->kd_costumer); ?>" class="btn btn-xs btn-danger">
+                                 Delete
+                               </a>
+
+                             </td>
+                           </tr>
+                       <?php
+                          }
+                        } ?>
+
+                     </tbody>
+                   </table>
+                 </div>
+                 <!-- /.card-body -->
+               </div>
+               <!-- /.card -->
+             </div>
+           </div>
+         </div>
+   </section>
+ </div>
+ <script>
+   window.onload = function() {
+     /** Your code here. **/
+
+     if (localStorage.getItem("user_id") != null) {
+       var userID = document.getElementsByName("user_id");
+       var username = document.getElementsByName("username");
+       for (var x = 0; x < userID.length; x++) // comparison should be "<" not "<="
+       {
+         userID[x].value = localStorage.getItem("user_id");
+       }
+
+       for (var x = 0; x < username.length; x++) // comparison should be "<" not "<="
+       {
+         username[x].value = localStorage.getItem("username");
+       }
+
+     }
+
+
+   }
+ </script>

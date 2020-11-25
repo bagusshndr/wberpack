@@ -233,6 +233,30 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('Welcome/DataSlide'); ?>" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Data Slide
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('Welcome/DataPrincipal'); ?>" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Data Principal
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('Welcome/DataCostumer'); ?>" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Data Customer
+                </p>
+              </a>
+            </li>
             <!-- </ul>
             </li> -->
             <!-- <li class="nav-item">
