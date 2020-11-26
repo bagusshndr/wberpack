@@ -301,6 +301,32 @@ class Welcome extends CI_Controller
 		redirect(site_url('Welcome/DataProduk'));
 	}
 
+	public function DataQuotation()
+	{
+		$data['username'] = $this->session->userdata('username');
+		$data['foto'] = $this->session->userdata('foto');
+
+		if ($this->uri->segment(4) == 'view') {
+			$id = $this->uri->segment(3);
+			$tampil = $this->MSudi->GetDataWhere('tbl_quotation', 'id', $id)->row();
+			$data['detail']['id'] = $tampil->id;
+			$data['detail']['nama'] = $tampil->nama;
+			$data['detail']['perusahaan'] = $tampil->perusahaan;
+			$data['detail']['enail'] = $tampil->enail;
+			$data['detail']['number'] = $tampil->number;
+			$data['detail']['subject'] = $tampil->subject;
+			$data['detail']['message'] = $tampil->message;
+
+			$data['content'] = 'VQuotation';
+		} else {
+			$data['DataQuotation'] = $this->MSudi->GetData('tbl_quotation');
+			$data['content'] = 'VQuotation';
+		}
+
+
+		$this->load->view('welcome_message', $data);
+	}
+
 	public function DataSlide()
 	{
 		$data['username'] = $this->session->userdata('username');

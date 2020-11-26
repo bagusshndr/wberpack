@@ -42,6 +42,7 @@ class Welcome extends CI_Controller
 
 		$data['DataJenisProduk'] = $this->MSudi->GetData('tbl_jenis_produk');
 		$data['DataKategori'] = $this->MSudi->GetData('tbl_kategori');
+		$data['slide'] = $this->MSudi->GetData('tbl_slide');
 		$data['content'] = 'VAbout';
 		$this->load->view('welcome_message', $data);
 		// } else {
@@ -76,6 +77,7 @@ class Welcome extends CI_Controller
 
 
 			$data['DataKategori'] = $this->MSudi->GetData('tbl_kategori');
+			$data['slide'] = $this->MSudi->GetData('tbl_slide');
 			$data['content'] = 'VProduct';
 		}
 
@@ -91,6 +93,7 @@ class Welcome extends CI_Controller
 
 		$data['content'] = 'VContact';
 		$data['DataKategori'] = $this->MSudi->GetData('tbl_kategori');
+		$data['slide'] = $this->MSudi->GetData('tbl_slide');
 		$this->load->view('welcome_message', $data);
 		// } else {
 		// 	redirect(site_url('Login'));
