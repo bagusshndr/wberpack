@@ -46,92 +46,30 @@
             </ul>
           </div>
         </div> -->
-
             <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="<?php echo base_url('assets/img/test.png'); ?>" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="<?php echo base_url('assets/img/test.png'); ?>" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                if (!empty($DataProduk)) {
+                    foreach ($DataProduk as $ReadDS) {
+                ?>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app-<?php echo $ReadDS->kd_jenis_produk; ?>">
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="<?php echo base_url('assets/img/test2.png'); ?>" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="<?php echo base_url('assets/img/test2.png'); ?>" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
+                            <div class="portfolio-wrap">
 
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="<?php echo base_url('assets/img/test.png'); ?>" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
+                                <img src="<?php echo base_url('backend/upload/produk/') . $ReadDS->foto; ?>" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                    <h4><?php echo $ReadDS->nama_produk; ?></h4>
+                                    <p><?php echo $ReadDS->jenis_produk; ?></p>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="<?php echo base_url('backend/upload/produk/') . $ReadDS->foto; ?>" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                                    <a href="<?php echo site_url('Welcome/VProductDetail?id=' . $ReadDS->kd_produk); ?>" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="portfolio-links">
-                            <a href="<?php echo base_url('assets/img/test.png'); ?>" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="<?php echo base_url('assets/img/test2.png'); ?>" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="<?php echo base_url('assets/img/test2.png'); ?>" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="<?php echo base_url('assets/img/test.png'); ?>" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="<?php echo base_url('assets/img/test.png'); ?>" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="<?php echo base_url('assets/img/test.png'); ?>" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
-                        </div>
-                        <div class="portfolio-links">
-                            <a href="<?php echo base_url('assets/img/test.png'); ?>" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-
+                <?php
+                    }
+                }
+                ?>
             </div>
             <!-- <div class="col-md-8 offset-md-2 text-center">
         <a href="product.php" class="btn btn-primary">View All</a>
@@ -206,7 +144,7 @@
 </main><!-- End #main -->
 
 <!-- ======= Clients Section ======= -->
-<section id="clients" class="clients section-bg">
+<!-- <section id="clients" class="clients section-bg">
     <div class="container">
 
         <div class="row">
@@ -239,4 +177,4 @@
 
 
     </div>
-</section><!-- End Clients Section -->
+</section>End Clients Section -->

@@ -809,7 +809,7 @@ section .about1 {
 }
 
 .services .icon-box:hover::before {
-  background: #1b96bc;
+  background: #0c1ba0;
   right: 0;
   top: 0;
   width: 100%;
@@ -825,7 +825,7 @@ section .about1 {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  background: #1b96bc;
+  background: #0c1ba0;
   transition: all 0.3s ease-in-out;
 }
 
@@ -860,7 +860,7 @@ section .about1 {
 }
 
 .services .icon-box:hover .icon i {
-  color: #1b96bc;
+  color: #0c1ba0;
 }
 
 /*--------------------------------------------------------------
