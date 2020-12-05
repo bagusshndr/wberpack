@@ -40,7 +40,7 @@
                                      <table class="table table-head-fixed text-nowrap">
                                          <thead>
                                              <tr>
-                                                 <th>Kode slide</th>
+                                                 <th>No</th>
                                                  <th>Judul</th>
                                                  <th>Deskripsi</th>
                                                  <th>Gambar slide</th>
@@ -53,10 +53,11 @@
                                          <tbody>
                                              <?php
                                                 if (!empty($DataSlide)) {
-                                                    foreach ($DataSlide as $ReadDS) {
+                                                    foreach ($DataSlide as $index => $ReadDS) {
+                                                        $index = $index + 1;
                                                 ?>
                                                      <tr>
-                                                         <td><?php echo $ReadDS->kd_slide; ?></td>
+                                                         <td><?php echo $index ?></td>
                                                          <td><?php echo $ReadDS->judul; ?></td>
                                                          <td><?php echo $ReadDS->deskripsi; ?></td>
 

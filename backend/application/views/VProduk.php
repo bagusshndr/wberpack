@@ -19,11 +19,12 @@
            <div class="row">
              <div class="col-12">
                <div class="card-body">
-                 <div class="card-header">
-                   <a href="<?php echo site_url('Welcome/VFormAddProduk'); ?>" class="btn btn-success">
-                     Tambah data
-                   </a>
-                   <!-- <div class="card-tools">
+                 <form id="form1" method="POST">
+                   <div class="card-header">
+                     <a href="<?php echo site_url('Welcome/VFormAddProduk'); ?>" class="btn btn-success">
+                       Tambah data
+                     </a>
+                     <!-- <div class="card-tools">
                      <div class="input-group input-group-sm" style="width: 150px;">
                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
                        <div class="input-group-append">
@@ -31,48 +32,51 @@
                        </div>
                      </div>
                    </div> -->
-                 </div>
-                 <table class="table table-bordered table-striped">
-                   <thead>
-                     <tr>
-                       <th>No</th>
-                       <th>Jenis Produk</th>
-                       <th>Nama Produk</th>
-                       <th>Gambar Produk</th>
-                       <th>Keterangan</th>
-                       <th>Tools</th>
+                   </div>
+                   <table class="table table-bordered table-striped">
+                     <thead>
+                       <tr>
+                         <th><input type="checkbox" id="select-all" /></th>
+                         <th>No</th>
+                         <th>Jenis Produk</th>
+                         <th>Nama Produk</th>
+                         <th>Gambar Produk</th>
+                         <th>Keterangan</th>
+                         <th>Tools</th>
 
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <?php
-                      if (!empty($DataProduk)) {
-                        foreach ($DataProduk as $index => $ReadDS) {
-                          $index = $index + 1;
-                      ?>
-                         <tr>
-                           <td><?php echo $index ?></td>
-                           <td><?php echo $ReadDS->jenis_produk; ?></td>
-                           <td><?php echo $ReadDS->nama_produk; ?></td>
-                           <td><img width="50px" height="50px" src="<?php echo base_url('upload/produk/') . $ReadDS->foto; ?>"></td>
-                           <td><?php echo $ReadDS->keterangan; ?></td>
-                           <td>
-                             <a href="<?php echo site_url('Welcome/DataProduk/' . $ReadDS->kd_produk . '/view'); ?>" class="btn btn-xs btn-info">
-                               Edit
-                             </a>
-                             <a href="<?php echo site_url('Welcome/DeleteDataProduk/' . $ReadDS->kd_produk); ?>" class="btn btn-xs btn-danger">
-                               Delete
-                             </a>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <?php
+                        if (!empty($DataProduk)) {
+                          foreach ($DataProduk as $index => $ReadDS) {
+                            $index = $index + 1;
+                        ?>
+                           <tr>
+                             <td> <input type="checkbox" name="check" /></td>
+                             <td><?php echo $index ?></td>
+                             <td><?php echo $ReadDS->jenis_produk; ?></td>
+                             <td><?php echo $ReadDS->nama_produk; ?></td>
+                             <td><img width="50px" height="50px" src="<?php echo base_url('upload/produk/') . $ReadDS->foto; ?>"></td>
+                             <td><?php echo $ReadDS->keterangan; ?></td>
+                             <td>
+                               <a href="<?php echo site_url('Welcome/DataProduk/' . $ReadDS->kd_produk . '/view'); ?>" class="btn btn-xs btn-info">
+                                 Edit
+                               </a>
+                               <a href="<?php echo site_url('Welcome/DeleteDataProduk/' . $ReadDS->kd_produk); ?>" class="btn btn-xs btn-danger">
+                                 Delete
+                               </a>
 
-                           </td>
-                         </tr>
-                     <?php
+                             </td>
+                           </tr>
+                       <?php
+                          }
                         }
-                      }
-                      ?>
+                        ?>
 
-                   </tbody>
-                 </table>
+                     </tbody>
+                   </table>
+                 </form>
                </div>
                <!-- /.card-body -->
              </div>
@@ -103,4 +107,12 @@
 
 
    }
+ </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+   $(document).ready(function() {
+     $("#form1 #select-all").click(function() {
+       $("#form1 input[type='checkbox']").prop('checked', this.checked);
+     });
+   });
  </script>

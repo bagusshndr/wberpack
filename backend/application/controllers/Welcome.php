@@ -217,7 +217,7 @@ class Welcome extends CI_Controller
 			$data['content'] = 'VFormUpdateProduk';
 		} else {
 			$join = "tbl_jenis_produk.kd_jenis = tbl_produk.kd_jenis_produk";
-			$data['DataProduk'] = $this->MSudi->GetDataJoinWhere('tbl_produk', 'tbl_jenis_produk', $join, 'is_active', 1)->result();
+			$data['DataProduk'] = $this->MSudi->GetDataJoin('tbl_produk', 'tbl_jenis_produk', $join)->result();
 			$data['content'] = 'VProduk';
 		}
 
@@ -247,7 +247,6 @@ class Welcome extends CI_Controller
 		$add['nama_produk'] = $this->input->post('nama_produk');
 		$add['foto'] = $this->input->post('foto');
 		$add['keterangan'] = $this->input->post('keterangan');
-		$add['is_active'] = 1;
 
 		$config['upload_path'] = '././upload/produk';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
@@ -295,9 +294,8 @@ class Welcome extends CI_Controller
 		$data['foto'] = $this->session->userdata('foto');
 
 		$kd_produk = $this->uri->segment('3');
-		$update['is_active'] = 0;
 
-		$this->MSudi->UpdateData('tbl_produk', 'kd_produk', $kd_produk, $update);
+		$this->MSudi->DeleteData('tbl_produk', 'kd_produk', $kd_produk);
 		redirect(site_url('Welcome/DataProduk'));
 	}
 

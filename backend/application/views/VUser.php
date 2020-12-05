@@ -18,7 +18,6 @@
          <div class="box-header with-border">
            <div class="row">
              <div class="col-12">
-
                <div class="card">
                  <div class="card-header">
                    <a href="<?php echo site_url('Welcome/VFormAddUser'); ?>" class="btn btn-success">
@@ -40,7 +39,7 @@
                    <table class="table table-head-fixed text-nowrap">
                      <thead>
                        <tr>
-                         <th>Kode User</th>
+                         <th>No</th>
                          <!-- <th>Kode Pegawai</th> -->
                          <th>Username</th>
                          <th>Password</th>
@@ -55,10 +54,11 @@
                      <tbody>
                        <?php
                         if (!empty($DataUser)) {
-                          foreach ($DataUser as $ReadDS) {
+                          foreach ($DataUser as $index => $ReadDS) {
+                            $index = $index + 1;
                         ?>
                            <tr>
-                             <td><?php echo $ReadDS->kd_user; ?></td>
+                             <td><?php echo $index ?></td>
                              <!-- <td><?php echo $ReadDS->kd_staff; ?></td> -->
                              <td><?php echo $ReadDS->username; ?></td>
                              <td><?php echo $ReadDS->password; ?></td>
