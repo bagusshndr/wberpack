@@ -139,6 +139,7 @@ class Welcome extends CI_Controller
 		$add['number'] = $this->input->post('number');
 		$add['subject'] = $this->input->post('subject');
 		$add['message'] = $this->input->post('message');
+		$add['status'] = $this->input->post('status');
 		$this->MSudi->AddData('tbl_quotation', $add);
 		redirect(site_url('Welcome/VContact') . '?success=true');
 	}
