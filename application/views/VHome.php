@@ -1,14 +1,3 @@
-<!-- <link href="<?php echo base_url('Test/assets/owl.carousel/assets/owl.carousel.css" rel="stylesheet'); ?>">
-<link href="<?php echo base_url('Test/assets/owl.carousel/assets/owl.theme.default.min.css" rel="stylesheet'); ?>"> -->
-<!-- flexslider -->
-<!-- <link href="<?php echo base_url('Test/assets/flexSlider/flexslider.css" rel="stylesheet'); ?>"> -->
-<!-- materialize -->
-<!-- <link href="<?php echo base_url('Test/assets/materialize/css/materialize.min.css" rel="stylesheet'); ?>"> -->
-<!-- Bootstrap -->
-<!-- <link href="<?php echo base_url('Test/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet'); ?>"> -->
-<!-- shortcodes -->
-<!-- <link href="<?php echo base_url('Test/assets/css/shortcodes/shortcodes.css" rel="stylesheet'); ?>"> -->
-
 <a href="https://api.whatsapp.com/send?phone=628111180699"><button class="open-button">Contact Now</button></a>
 <!-- <button class="open-button" onclick="openForm()">Contact Now</button> -->
 <div class="form-popup" id="myForm">
@@ -159,61 +148,40 @@
     <div class="container">
 
         <div class="row">
+            <?php
+            if (!empty($DataClient)) {
+                foreach ($DataClient as $ReadDS) {
+            ?>
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <img src="<?php echo base_url('backend/upload/costumer/') . $ReadDS->foto; ?>" class="img-fluid" alt="">
+                    </div>
 
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-1.png'); ?>" class="img-fluid" alt="">
-            </div>
+                    <!-- <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <img src="<?php echo base_url('assets/img/clients/client-2.png'); ?>" class="img-fluid" alt="">
+                    </div>
 
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-2.png'); ?>" class="img-fluid" alt="">
-            </div>
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <img src="<?php echo base_url('assets/img/clients/client-3.png'); ?>" class="img-fluid" alt="">
+                    </div>
 
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-3.png'); ?>" class="img-fluid" alt="">
-            </div>
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <img src="<?php echo base_url('assets/img/clients/client-4.png'); ?>" class="img-fluid" alt="">
+                    </div>
 
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-4.png'); ?>" class="img-fluid" alt="">
-            </div>
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <img src="<?php echo base_url('assets/img/clients/client-5.png'); ?>" class="img-fluid" alt="">
+                    </div>
 
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-5.png'); ?>" class="img-fluid" alt="">
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-6.png'); ?>" class="img-fluid" alt="">
-            </div>
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <img src="<?php echo base_url('assets/img/clients/client-6.png'); ?>" class="img-fluid" alt="">
+                    </div> -->
+            <?php
+                }
+            }
+            ?>
 
         </div>
-        <main id="main">
-            <div class="row">
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-1.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-2.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-3.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-4.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-5.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-6.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-            </div>
-
+        <!-- <main id="main"> -->
 
     </div>
 </section>

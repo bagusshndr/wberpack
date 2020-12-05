@@ -41,6 +41,7 @@ class Welcome extends CI_Controller
 
 			$data['DataJenisProduk'] = $this->MSudi->GetData('tbl_jenis_produk');
 			$data['DataKategori'] = $this->MSudi->GetData('tbl_kategori');
+			$data['DataClient'] = $this->MSudi->GetData('tbl_costumer');
 			$data['content'] = 'VHome';
 			// if ($this->uri->segment(4) == 'view') {
 			// $kd_slide = $this->uri->segment(3);
