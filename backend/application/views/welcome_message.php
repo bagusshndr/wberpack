@@ -171,9 +171,9 @@
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
+          <!-- <div class="image">
             <img src="<?php echo base_url('upload/') . $foto; ?>" class="img-circle elevation-2" alt="User Image">
-          </div>
+          </div> -->
           <div class="info">
             <a href="#" class="d-block"><?php echo $username; ?></a>
           </div>
@@ -238,6 +238,14 @@
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Data Slide
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo site_url('Welcome/DataQuotation'); ?>" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Data Quotation
                 </p>
               </a>
             </li>
