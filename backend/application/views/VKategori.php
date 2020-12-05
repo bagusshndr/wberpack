@@ -18,65 +18,79 @@
                  <div class="box-header with-border">
                      <div class="row">
                          <div class="col-12">
-
                              <div class="card">
-                                 <div class="card-header">
-                                     <a href="<?php echo site_url('Welcome/VFormAddKategori'); ?>" class="btn btn-success">
-                                         Tambah data
-                                     </a>
+                                 <form id="form1" method="POST">
+                                     <div class="card-header">
+                                         <a href="<?php echo site_url('Welcome/VFormAddKategori'); ?>" class="btn btn-success">
+                                             Tambah data
+                                         </a>
 
-                                     <div class="card-tools">
-                                         <div class="input-group input-group-sm" style="width: 150px;">
-                                             <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                         <div class="card-tools">
+                                             <div class="input-group input-group-sm" style="width: 150px;">
+                                                 <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
-                                             <div class="input-group-append">
-                                                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                                 <div class="input-group-append">
+                                                     <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                                 </div>
                                              </div>
                                          </div>
                                      </div>
-                                 </div>
-                                 <!-- /.card-header -->
+                                     <!-- /.card-header -->
 
-                                 <table class="table table-head-fixed text-nowrap">
-                                     <thead>
-                                         <tr>
-                                             <th>No</th>
-                                             <th>Nama Ketegori</th>
-                                             <th>Tools</th>
-                                             <th>
-                                                 &nbsp;
-                                             </th>
-                                         </tr>
-                                     </thead>
-                                     <tbody>
-                                         <?php
-                                            if (!empty($DataKategori)) {
-                                                foreach ($DataKategori as $index => $ReadDS) {
-                                                    $index = $index + 1;
-                                            ?>
-                                                 <tr>
-                                                     <td><?php echo $index; ?></td>
-                                                     <td><?php echo $ReadDS->nama_kategori; ?></td>
+                                     <table class="table table-head-fixed text-nowrap">
+                                         <thead>
+                                             <tr>
+                                                 <th><input type="checkbox" id="select-all" /></th>
+
+                                                 <th>No</th>
+                                                 <th>Nama Ketegori</th>
+                                                 <th></th>
+                                                 <th></th>
+                                                 <th></th>
+                                                 <th>
+                                                     &nbsp;
+                                                 </th>
+                                                 <th>
+                                                     &nbsp;
+                                                 </th>
+                                                 <th>Tools</th>
 
 
-                                                     <td>
-                                                         <a href="<?php echo site_url('Welcome/DataKategori/' . $ReadDS->kd_kategori . '/view'); ?>" class="btn btn-xs btn-info">
-                                                             Edit
-                                                         </a>
-                                                         <a href="<?php echo site_url('Welcome/DeleteDataKategori/' . $ReadDS->kd_kategori); ?>" class="btn btn-xs btn-danger">
-                                                             Delete
-                                                         </a>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <?php
+                                                if (!empty($DataKategori)) {
+                                                    foreach ($DataKategori as $index => $ReadDS) {
+                                                        $index = $index + 1;
+                                                ?>
+                                                     <tr>
+                                                         <td><input type="checkbox" name="check" /></td>
+                                                         <td><?php echo $index; ?></td>
+                                                         <td><?php echo $ReadDS->nama_kategori; ?></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td>
+                                                             <a href="<?php echo site_url('Welcome/DataKategori/' . $ReadDS->kd_kategori . '/view'); ?>" class="btn btn-xs btn-info">
+                                                                 Edit
+                                                             </a>
+                                                             <a href="<?php echo site_url('Welcome/DeleteDataKategori/' . $ReadDS->kd_kategori); ?>" class="btn btn-xs btn-danger">
+                                                                 Delete
+                                                             </a>
 
-                                                     </td>
-                                                 </tr>
-                                         <?php
-                                                }
-                                            } ?>
+                                                         </td>
+                                                     </tr>
+                                             <?php
+                                                    }
+                                                } ?>
 
-                                     </tbody>
-                                 </table>
+                                         </tbody>
+                                     </table>
 
-                                 <!-- /.card-body -->
+                                 </form><!-- /.card-body -->
                              </div>
                              <!-- /.card -->
                          </div>
@@ -105,4 +119,12 @@
 
 
      }
+ </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+     $(document).ready(function() {
+         $("#form1 #select-all").click(function() {
+             $("#form1 input[type='checkbox']").prop('checked', this.checked);
+         });
+     });
  </script>

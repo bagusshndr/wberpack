@@ -53,6 +53,7 @@ class MSudi extends CI_Model
         $this->db->select('*');
         $this->db->from($tbl1);
         $this->db->order_by($order, $param1);
+        $this->db->limit(6, 0);
         $this->db->join($tbl2, $param);
         $query = $this->db->get();
         return $query;

@@ -8,6 +8,8 @@
   <title>WBERPACK</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/js/my.js"></script>
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -121,7 +123,7 @@
   <div class="container d-flex">
 
     <div class="logo mr-auto">
-      <h1 class="text-light"><a href="index.html"><img src="<?php echo base_url('assets/img/logo.png'); ?>"></a></h1>
+      <h1 class="text-light"><a href="index.html"><img src="<?php echo base_url('assets/img/team/logo.png'); ?>"></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
     </div>
@@ -174,8 +176,7 @@
                 <div class="carousel-content">
                   <h2 class="animate__animated animate__fadeInDown"><?= $slide[$i]->judul; ?></h2>
                   <p class="animate__animated animate__fadeInUp"><?= $slide[$i]->deskripsi; ?></p>
-                  <a href="product.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get
-                    Product</a>
+                  <a href="<?php echo site_url('Welcome/VAbout'); ?>" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
                 </div>
               </div>
             </div>

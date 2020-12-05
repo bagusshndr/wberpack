@@ -35,8 +35,10 @@
                           </div>
                           <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch">
                               <a href="#"> <i class="bx bx-envelope"></i></a>
-                              <a href="#">
+                              <a href="mailto:bagussuhendri19@gmail.com">
                                   <h4 style="color: black;">Email Us</h4>
+                              </a>
+
                               </a>
                               <p>contact@example.com<br>info@example.com</p>
                           </div>
@@ -50,8 +52,14 @@
                   </div>
 
                   <div class="col-lg-6 d-flex align-items-stretch contact-form-wrap">
-                      <form action="<?php echo site_url('Welcome/AddDataContact'); ?>" method="post" enctype="multipart/form-data" class="php-email-form">
+                      <form action="<?php echo site_url('Welcome/AddDataContact'); ?>" method="post" enctype="multipart/form-data" class="php-email-form" id="myForm">
                           <div class="form-row">
+                              <!-- <div class="form-group ">
+                                  <?php if (isset($success)) { ?>
+                                      <label style="color: black;">Your message has been sent successfully. Our support team will get back to you.
+                                      </label>
+                                  <?php } ?>
+                              </div> -->
                               <div class="col-md-6 form-group">
                                   <label for="name">Your Name</label>
                                   <input type="text" name="nama" class="form-control" id="nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -82,7 +90,7 @@
                           </div>
                           <div class="form-group">
                               <label for="message">Message</label>
-                              <textarea class="form-control" name="message" rows="8" data-rule="required" data-msg="Please write something for us"></textarea>
+                              <textarea class="form-control" name="message" rows="8" id="message" data-rule="required" data-msg="Please write something for us"></textarea>
                               <div class="validate"></div>
                           </div>
                           <!-- <div class="mb-3">
@@ -90,7 +98,7 @@
                               <div class="error-message"></div>
                               <div class="sent-message">Your message has been sent. Thank you!</div>
                           </div> -->
-                          <div class="text-center"><button type="submit">Send Message</button></div>
+                          <div class="text-center"><button id="loginbtn" type="submit">Send Message</button></div>
                       </form>
                   </div>
 
@@ -98,3 +106,29 @@
 
           </div>
   </section><!-- End Contact Us Section -->
+
+  <script>
+      $('#loginbtn').on('click', function(e) {
+          e.preventDefault();
+          var data = $('#myForm').serialize();
+          var base_url = '<?php echo base_url(); ?>'
+          $.ajax({
+              url: base_url + 'index.php/Welcome/AddDataContact',
+              type: 'POST',
+              data: data,
+              success: function(data) {
+
+                  alert('Your message has been sent successfully. Our support team will get back to you.'); // here what you want to do with response
+                  document.getElementById("nama").value = '';
+                  document.getElementById("number").value = '';
+                  document.getElementById("email").value = '';
+                  document.getElementById("perusahaan").value = '';
+                  document.getElementById("subject").value = '';
+                  document.getElementById("message").value = '';
+              }
+          });
+          return false;
+
+
+      });
+  </script>

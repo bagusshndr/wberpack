@@ -121,6 +121,9 @@ class Welcome extends CI_Controller
 		$data['content'] = 'VContact';
 		$data['DataKategori'] = $this->MSudi->GetData('tbl_kategori');
 		$data['slide'] = $this->MSudi->GetData('tbl_slide');
+		if (isset($_GET['success'])) {
+			$data['success'] = 'asdasd';
+		}
 		$this->load->view('welcome_message', $data);
 		// } else {
 		// 	redirect(site_url('Login'));
@@ -135,10 +138,8 @@ class Welcome extends CI_Controller
 		$add['number'] = $this->input->post('number');
 		$add['subject'] = $this->input->post('subject');
 		$add['message'] = $this->input->post('message');
-
-
 		$this->MSudi->AddData('tbl_quotation', $add);
-		redirect(site_url('Welcome/VContact'));
+		redirect(site_url('Welcome/VContact') . '?success=true');
 	}
 	public function VProductDetail()
 	{

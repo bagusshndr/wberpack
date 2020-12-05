@@ -19,59 +19,63 @@
                      <div class="row">
                          <div class="col-12">
                              <div class="card">
-                                 <div class="card-header">
-                                     <!-- <a href="<?php echo site_url('Welcome/VFormAddJenisProduk'); ?>" class="btn btn-success">
-                                         Tambah data
-                                     </a> -->
-                                 </div>
-                                 <!-- /.card-header -->
-
-                                 <table class="table table-head-fixed text-nowrap">
-                                     <thead>
-                                         <tr>
-                                             <th>No</th>
-                                             <th>Nama</th>
-                                             <th>Perusahaan</th>
-                                             <th>Email</th>
-                                             <th>Number</th>
-                                             <th>Subject</th>
-                                             <th>Message</th>
-
-                                         </tr>
-                                     </thead>
-                                     <tbody>
-                                         <?php
-                                            if (!empty($DataQuotation)) {
-                                                foreach ($DataQuotation as $index => $ReadDS) {
-                                                    $index = $index + 1;
-                                            ?>
-                                                 <tr>
-                                                     <td><?php echo $index; ?></td>
-                                                     <td><?php echo $ReadDS->nama; ?></td>
-                                                     <td><?php echo $ReadDS->perusahaan; ?></td>
-                                                     <td><?php echo $ReadDS->email; ?></td>
-                                                     <td><?php echo $ReadDS->number; ?></td>
-                                                     <td><?php echo $ReadDS->subject; ?></td>
-                                                     <td><?php echo $ReadDS->message; ?></td>
-                                                     <td>
-                                                         <!-- <a href="<?php echo site_url('Welcome/DataQuotation/' . $ReadDS->kd_jenis . '/view'); ?>" class="btn btn-xs btn-info">
+                                 <form id="form1" method="POST">
+                                     <table class="table table-head-fixed text-nowrap">
+                                         <thead>
+                                             <tr>
+                                                 <th><input type="checkbox" id="select-all" /></th>
+                                                 <th>No</th>
+                                                 <th>Nama</th>
+                                                 <th>Perusahaan</th>
+                                                 <th>Email</th>
+                                                 <th>Number</th>
+                                                 <th>Subject</th>
+                                                 <th>Message</th>
+                                                 <th>Status</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <?php
+                                                if (!empty($DataQuotation)) {
+                                                    foreach ($DataQuotation as $index => $ReadDS) {
+                                                        $index = $index + 1;
+                                                ?>
+                                                     <tr>
+                                                         <td> <input type="checkbox" name="check" /></td>
+                                                         <td><?php echo $index; ?></td>
+                                                         <td><?php echo $ReadDS->nama; ?></td>
+                                                         <td><?php echo $ReadDS->perusahaan; ?></td>
+                                                         <td><?php echo $ReadDS->email; ?></td>
+                                                         <td><?php echo $ReadDS->number; ?></td>
+                                                         <td><?php echo $ReadDS->subject; ?></td>
+                                                         <td><?php echo $ReadDS->message; ?></td>
+                                                         <td>Sudah Dibalas</td>
+                                                         <td>
+                                                             <!-- <a href="<?php echo site_url('Welcome/DataQuotation/' . $ReadDS->kd_jenis . '/view'); ?>" class="btn btn-xs btn-info">
                                                              Edit
-                                                         </a>
-                                                         <a href="<?php echo site_url('Welcome/DeleteDataQuotation/' . $ReadDS->kd_jenis); ?>" class="btn btn-xs btn-danger">
-                                                             Delete
                                                          </a> -->
+                                                             <a href="#" class="btn btn-xs btn-primary">
+                                                                 <i class="fa fa-check" aria-hidden="true"></i>
+                                                             </a>
+                                                             <a href="#" class="btn btn-xs btn-primary">
+                                                                 <i class="fa fa-info" aria-hidden="true"></i>
+                                                             </a>
+                                                             <a href="" class="btn btn-xs btn-danger">
+                                                                 Delete
+                                                             </a>
 
-                                                     </td>
-                                                 </tr>
-                                         <?php
-                                                }
-                                            } ?>
+                                                         </td>
+                                                     </tr>
+                                             <?php
+                                                    }
+                                                } ?>
 
-                                     </tbody>
-                                 </table>
-
+                                         </tbody>
+                                     </table>
+                                 </form>
                                  <!-- /.card-body -->
                              </div>
+
                              <!-- /.card -->
                          </div>
                      </div>
@@ -99,4 +103,12 @@
 
 
      }
+ </script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+     $(document).ready(function() {
+         $("#form1 #select-all").click(function() {
+             $("#form1 input[type='checkbox']").prop('checked', this.checked);
+         });
+     });
  </script>

@@ -1,3 +1,14 @@
+<!-- <link href="<?php echo base_url('Test/assets/owl.carousel/assets/owl.carousel.css" rel="stylesheet'); ?>">
+<link href="<?php echo base_url('Test/assets/owl.carousel/assets/owl.theme.default.min.css" rel="stylesheet'); ?>"> -->
+<!-- flexslider -->
+<!-- <link href="<?php echo base_url('Test/assets/flexSlider/flexslider.css" rel="stylesheet'); ?>"> -->
+<!-- materialize -->
+<!-- <link href="<?php echo base_url('Test/assets/materialize/css/materialize.min.css" rel="stylesheet'); ?>"> -->
+<!-- Bootstrap -->
+<!-- <link href="<?php echo base_url('Test/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet'); ?>"> -->
+<!-- shortcodes -->
+<!-- <link href="<?php echo base_url('Test/assets/css/shortcodes/shortcodes.css" rel="stylesheet'); ?>"> -->
+
 <a href="https://api.whatsapp.com/send?phone=628111180699"><button class="open-button">Contact Now</button></a>
 <!-- <button class="open-button" onclick="openForm()">Contact Now</button> -->
 <div class="form-popup" id="myForm">
@@ -30,7 +41,7 @@
     <section id="portfolio" class="portfolio section-bg">
         <div class="container">
             <div class="section-title">
-                <h2>Our Product</h2>
+                <h2>New Product</h2>
                 <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
             consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
             in iste officiis commodi quidem hic quas.</p> -->
@@ -61,7 +72,7 @@
                                     <p><?php echo $ReadDS->jenis_produk; ?></p>
                                 </div>
                                 <div class="portfolio-links">
-                                    <a href="<?php echo base_url('backend/upload/produk/') . $ReadDS->foto; ?>" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                                    <a href="<?php echo base_url('backend/upload/produk/') . $ReadDS->foto; ?>" data-gall="portfolioGallery" class="venobox" title="<?php echo $ReadDS->nama_produk; ?>"><i class="bx bx-plus"></i></a>
                                     <a href="<?php echo site_url('Welcome/VProductDetail?id=' . $ReadDS->kd_produk); ?>" title="More Details"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
@@ -144,7 +155,7 @@
 </main><!-- End #main -->
 
 <!-- ======= Clients Section ======= -->
-<!-- <section id="clients" class="clients section-bg">
+<section id="clients" class="clients section-bg">
     <div class="container">
 
         <div class="row">
@@ -174,7 +185,36 @@
             </div>
 
         </div>
+        <main id="main">
+            <div class="row">
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                    <img src="<?php echo base_url('assets/img/clients/client-1.png'); ?>" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                    <img src="<?php echo base_url('assets/img/clients/client-2.png'); ?>" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                    <img src="<?php echo base_url('assets/img/clients/client-3.png'); ?>" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                    <img src="<?php echo base_url('assets/img/clients/client-4.png'); ?>" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                    <img src="<?php echo base_url('assets/img/clients/client-5.png'); ?>" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                    <img src="<?php echo base_url('assets/img/clients/client-6.png'); ?>" class="img-fluid" alt="">
+                </div>
+
+            </div>
 
 
     </div>
-</section>End Clients Section -->
+</section>
+<!-- End Clients Section -->
