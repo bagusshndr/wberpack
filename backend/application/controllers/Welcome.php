@@ -935,6 +935,23 @@ class Welcome extends CI_Controller
 		redirect(site_url('Welcome/DataKategori'));
 	}
 
+	public function UpdateStatus()
+	{
+		$data['username'] = $this->session->userdata('username');
+		$data['foto'] = $this->session->userdata('foto');
+
+		$id = $_GET['id'];
+		$status = $_GET['status'];
+		if ($status == '1') {
+			$status = 'Sudah Dibalas';
+		} else if ($status == '0') {
+			$status = 'Belum Dibalas';
+		}
+		$update['status'] = $status;
+
+		$this->MSudi->UpdateData('tbl_quotation', 'id', $id, $update);
+		redirect(site_url('Welcome/DataQuotation'));
+	}
 
 
 

@@ -55,7 +55,7 @@
  															<!-- <a href="<?php echo site_url('Welcome/DataQuotation/' . $ReadDS->kd_jenis . '/view'); ?>" class="btn btn-xs btn-info">
                                                              Edit
                                                          </a> -->
- 															<a href="<?php echo site_url('Welcome/DetailQuotation/' . $ReadDS->id . '/view') ?>" class="btn btn-xs btn-primary">
+ 															<a href="<?php echo site_url('Welcome/UpdateStatus?id=' . $ReadDS->id . '&status=1') ?>" class="btn btn-xs btn-primary">
  																<i class="fa fa-check" aria-hidden="true"></i>
  															</a>
  															<a href="<?php echo site_url('Welcome/DetailQuotation/' . $ReadDS->id . '/view') ?>" class="btn btn-xs btn-primary">
