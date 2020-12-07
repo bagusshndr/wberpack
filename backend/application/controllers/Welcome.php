@@ -630,6 +630,7 @@ class Welcome extends CI_Controller
 			$kd_costumer = $this->uri->segment(3);
 			$tampil = $this->MSudi->GetDataWhere('tbl_costumer', 'kd_costumer', $kd_costumer)->row();
 			$data['detail']['kd_costumer'] = $tampil->kd_costumer;
+			$data['detail']['nama_perusahaan'] = $tampil->nama_perusahaan;
 			$data['detail']['foto'] = $tampil->foto;
 			$data['content'] = 'VFormUpdateCostumer';
 		} else {
@@ -656,6 +657,7 @@ class Welcome extends CI_Controller
 		$data['foto'] = $this->session->userdata('foto');
 
 		$add['kd_costumer'] = $this->input->post('kd_costumer');
+		$add['nama_perusahaan'] = $this->input->post('nama_perusahaan');
 		$add['foto'] = $this->input->post('foto');
 
 		$config['upload_path'] = '././upload/costumer';
@@ -678,6 +680,7 @@ class Welcome extends CI_Controller
 
 
 		$kd_costumer = $this->input->post('kd_costumer');
+		$update['nama_perusahaan'] = $this->input->post('nama_perusahaan');
 		$update['foto'] = $this->input->post('foto');
 
 		$config['upload_path'] = '././upload/costumer';
@@ -932,6 +935,23 @@ class Welcome extends CI_Controller
 		redirect(site_url('Welcome/DataKategori'));
 	}
 
+	public function UpdateStatus()
+	{
+		$data['username'] = $this->session->userdata('username');
+		$data['foto'] = $this->session->userdata('foto');
+
+		$id = $_GET['id'];
+		$status = $_GET['status'];
+		if ($status == '1') {
+			$status = 'Sudah Dibalas';
+		} else if ($status == '0') {
+			$status = 'Belum Dibalas';
+		}
+		$update['status'] = $status;
+
+		$this->MSudi->UpdateData('tbl_quotation', 'id', $id, $update);
+		redirect(site_url('Welcome/DataQuotation'));
+	}
 
 
 

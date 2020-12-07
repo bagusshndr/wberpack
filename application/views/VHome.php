@@ -1,14 +1,3 @@
-<!-- <link href="<?php echo base_url('Test/assets/owl.carousel/assets/owl.carousel.css" rel="stylesheet'); ?>">
-<link href="<?php echo base_url('Test/assets/owl.carousel/assets/owl.theme.default.min.css" rel="stylesheet'); ?>"> -->
-<!-- flexslider -->
-<!-- <link href="<?php echo base_url('Test/assets/flexSlider/flexslider.css" rel="stylesheet'); ?>"> -->
-<!-- materialize -->
-<!-- <link href="<?php echo base_url('Test/assets/materialize/css/materialize.min.css" rel="stylesheet'); ?>"> -->
-<!-- Bootstrap -->
-<!-- <link href="<?php echo base_url('Test/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet'); ?>"> -->
-<!-- shortcodes -->
-<!-- <link href="<?php echo base_url('Test/assets/css/shortcodes/shortcodes.css" rel="stylesheet'); ?>"> -->
-
 <a href="https://api.whatsapp.com/send?phone=628111180699"><button class="open-button">Contact Now</button></a>
 <!-- <button class="open-button" onclick="openForm()">Contact Now</button> -->
 <div class="form-popup" id="myForm">
@@ -119,7 +108,7 @@
                     <div class="icon-box">
                         <div class="icon"><i class="bx bxl-dribbble"></i></div>
                         <h4 class="title"><a href="">Pengiriman Cepat</a></h4>
-                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                        <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
                     </div>
                 </div>
 
@@ -127,7 +116,7 @@
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-file"></i></div>
                         <h4 class="title"><a href="">Kualitas Terbaik</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                        <!-- <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> -->
                     </div>
                 </div>
 
@@ -135,7 +124,7 @@
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-tachometer"></i></div>
                         <h4 class="title"><a href="">Harga Terjangkau</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                        <!-- <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> -->
                     </div>
                 </div>
 
@@ -155,66 +144,80 @@
 </main><!-- End #main -->
 
 <!-- ======= Clients Section ======= -->
-<section id="clients" class="clients section-bg">
+<!-- <section id="clients" class="clients section-bg">
     <div class="container">
 
         <div class="row">
-
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-1.png'); ?>" class="img-fluid" alt="">
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-2.png'); ?>" class="img-fluid" alt="">
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-3.png'); ?>" class="img-fluid" alt="">
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-4.png'); ?>" class="img-fluid" alt="">
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-5.png'); ?>" class="img-fluid" alt="">
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                <img src="<?php echo base_url('assets/img/clients/client-6.png'); ?>" class="img-fluid" alt="">
-            </div>
+            <?php
+            if (!empty($DataClient)) {
+                foreach ($DataClient as $ReadDS) {
+            ?>
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <img src="<?php echo base_url('backend/upload/costumer/') . $ReadDS->foto; ?>" class="img-fluid" alt="">
+                    </div>
+            <?php
+                }
+            }
+            ?>
 
         </div>
-        <main id="main">
-            <div class="row">
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-1.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-2.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-3.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-4.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-5.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                    <img src="<?php echo base_url('assets/img/clients/client-6.png'); ?>" class="img-fluid" alt="">
-                </div>
-
-            </div>
 
 
     </div>
-</section>
+</section> -->
+<!-- <main id="main"> -->
 <!-- End Clients Section -->
+
+
+<!-- ======= Clients Section ======= -->
+<!-- <section id="clients" class="clients section-bg"> -->
+<div class="container">
+    <h2 class="text-center">Our Client</h2>
+    <section class="customer-logos slider">
+        <?php
+        if (!empty($DataClient)) {
+            foreach ($DataClient as $ReadDS) {
+        ?>
+                <div class="slide"> <img src="<?php echo base_url('backend/upload/costumer/') . $ReadDS->foto; ?>" class="img-fluid" alt=""></div>
+        <?php
+            }
+        }
+        ?>
+        <!-- <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
+            <div class="slide"><img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div> -->
+    </section>
+</div>
+<!-- </section> -->
+<!-- End Clients Section -->
+
+
+
+<script>
+    $(document).ready(function() {
+        $('.customer-logos').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+    });
+</script>

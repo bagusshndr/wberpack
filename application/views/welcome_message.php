@@ -111,6 +111,8 @@
   <!-- Template Main CSS File -->
   <link href="<?php echo base_url('assets/css/style.css" rel="stylesheet'); ?>">
 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- =======================================================
   * Template Name: Shuffle - v2.2.0
   * Template URL: https://bootstrapmade.com/bootstrap-3-one-page-template-free-shuffle/
@@ -324,7 +326,9 @@
       document.getElementById("myForm").style.display = "none";
     }
   </script>
-
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </body>
 

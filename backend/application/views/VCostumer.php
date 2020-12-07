@@ -32,6 +32,7 @@
                        <tr>
                          <th><input type="checkbox" id="select-all" /></th>
                          <th>No</th>
+                         <th>Nama Perusahaan</th>
                          <th>Gambar </th>
                          <th>Tools</th>
                          <th>
@@ -48,6 +49,7 @@
                            <tr>
                              <td> <input type="checkbox" name="check" /></td>
                              <td><?php echo $index ?></td>
+                             <td><?php echo $ReadDS->nama_perusahaan; ?></td>
                              <td><img width="50px" height="50px" src="<?php echo base_url('upload/costumer/') . $ReadDS->foto; ?>"></td>
                              <td>
                                <a href="<?php echo site_url('Welcome/DataCostumer/' . $ReadDS->kd_costumer . '/view'); ?>" class="btn btn-xs btn-info">
