@@ -94,9 +94,9 @@
             <div class="portfolio-details-container">
 
                 <div class="owl-carousel portfolio-details-carousel">
-                    <img src="<?php echo base_url('backend/upload/produk/') . $DetailProduk->foto; ?>" style="width:900; height:800px;" alt="">
+                    <img src="<?php echo base_url('backend/upload/produk/') . $DetailProduk->foto; ?>" style="width:900; height:600px;" alt="">
                     <!-- <img src="<?php echo base_url('assets/img/slide/2.jpeg" class="img-fluid'); ?>" alt=""> -->
-                    <!-- <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" alt=""> -->
+                    <!-- <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" style="width:900; height:500px;" alt=""> -->
                 </div>
 
                 <div class="portfolio-info">

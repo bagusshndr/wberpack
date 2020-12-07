@@ -28,9 +28,10 @@
  						<div class="col-12">
  							<form action="<?php echo site_url('Welcome/AddDataCostumer'); ?>" method="post" enctype="multipart/form-data">
  								<div class="card-body">
-
-
-
+ 									<div class="form-group">
+ 										<label>Nama Perusahaan</label>
+ 										<input type="text" name="nama_perusahaan" class="form-control" placeholder="Nama Perusahaan" required>
+ 									</div>
  									<div class="form-group">
  										<label for="exampleInputFile">File input</label><br>
  										<input type="file" name="userfile" />

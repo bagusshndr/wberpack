@@ -29,6 +29,12 @@
  							<form action="<?php echo site_url('Welcome/UpdateDataCostumer'); ?>" method="post" enctype="multipart/form-data">
  								<div class="card-body">
  									<div class="form-group">
+ 										<label>Nama Perusahaan</label>
+ 										<input type="hidden" name="kd_costumer" class="form-control" value="<?php echo $detail['kd_costumer']; ?>">
+ 										<input type="text" name="nama_perusahaan" value="<?php echo $detail['nama_perusahaan']; ?>" class="form-control" placeholder="Nama Produk" required>
+ 									</div>
+
+ 									<div class="form-group">
  										<label>Foto Sebelumnya</label><br>
  										<input type="hidden" name="kd_costumer" class="form-control" value="<?php echo $detail['kd_costumer']; ?>">
 
