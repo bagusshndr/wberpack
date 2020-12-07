@@ -213,6 +213,7 @@ class Welcome extends CI_Controller
 			$data['detail']['kd_jenis_produk'] = $tampil->kd_jenis_produk;
 			$data['detail']['nama_produk'] = $tampil->nama_produk;
 			$data['detail']['foto'] = $tampil->foto;
+			$data['detail']['foto_detail'] = $tampil->foto_detail;
 			$data['detail']['keterangan'] = $tampil->keterangan;
 			$data['content'] = 'VFormUpdateProduk';
 		} else {
@@ -258,6 +259,96 @@ class Welcome extends CI_Controller
 			$data = array('upload_data' => $this->upload->data());
 			$add['foto'] = implode($this->upload->data());
 		}
+		$data = array();
+		$data['filenames'] = [];
+		$files = (isset($_FILES['files'])) ? $_FILES['files'] : array();
+
+		if (isset($files['name'])) {
+
+			// foreach ($files["error"] as $key => $error) {
+			// 	if ($error == UPLOAD_ERR_OK) {
+
+			// 		if (function_exists('curl_file_create')) { // For PHP 5.5+
+			// 			$context["files[$key]"] = curl_file_create(
+			// 				$files['tmp_name'][$key],
+			// 				$files['type'][$key],
+			// 				$files['name'][$key]
+			// 			);
+			// 		} else {
+			// 			$context["files[$key]"] = '@' . realpath(
+			// 				$files['tmp_name'][$key],
+			// 				$files['type'][$key],
+			// 				$files['name'][$key]
+			// 			);
+			// 		}
+			// 		//$file = curl_file_create($file);
+			// 		//$file = '@' . realpath($file);
+
+			// 	}
+			// }
+
+
+			if (isset($_FILES['files'])) {
+
+				$data = array();
+				$data['filenames'] = [];
+				// Count total files
+				$countfiles = count($_FILES['files']['name']);
+
+				// Looping all files
+				for ($i = 0; $i < $countfiles; $i++) {
+
+					if (!empty($_FILES['files']['name'][$i])) {
+
+						// Define new $_FILES array - $_FILES['file']
+						$_FILES['file']['name'] = $_FILES['files']['name'][$i];
+						$_FILES['file']['type'] = $_FILES['files']['type'][$i];
+						$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i];
+						$_FILES['file']['error'] = $_FILES['files']['error'][$i];
+						$_FILES['file']['size'] = $_FILES['files']['size'][$i];
+
+						// Set preference
+						$config['upload_path'] = 'upload/';
+						$config['allowed_types'] = 'jpg|jpeg|png|gif|JPG';
+						// $config['max_size'] = '500000000'; // max_size in kb
+						$config['file_name'] = $_FILES['files']['name'][$i];
+
+						//Load upload library
+						$this->load->library('upload', $config);
+
+						try {
+
+							// File upload
+							if ($this->upload->do_upload('file')) {
+								// Get data about the file
+								$uploadData = $this->upload->data();
+								$filename = site_url('upload/') . 'produk/' . $uploadData['file_name'];
+								$replcate = str_replace("index.php/", "", $filename);
+								$filename = $replcate;
+
+								// Initialize array
+								array_push($data['filenames'], $filename);
+							}
+						}
+
+						//catch exception
+						catch (Exception $e) {
+							echo 'Message: ' . $e->getMessage();
+						}
+					}
+				}
+			}
+		}
+
+		if (count($data['filenames']) > 0) {
+
+			$image = json_encode($data['filenames']);
+			$replcate = str_replace("\/", "/", $image);
+			$data['filenames'] = $replcate;
+			$add['foto_detail'] = $data['filenames'];
+		} else {
+			$data['filenames'] = "[]";
+		}
 		$this->MSudi->AddData('tbl_produk', $add);
 		redirect(site_url('Welcome/DataProduk'));
 	}
@@ -285,6 +376,97 @@ class Welcome extends CI_Controller
 			$update['foto'] = implode($this->upload->data());
 		}
 
+		$data = array();
+		$data['filenames'] = [];
+		$files = (isset($_FILES['files'])) ? $_FILES['files'] : array();
+
+		if (isset($files['name'])) {
+
+			// foreach ($files["error"] as $key => $error) {
+			// 	if ($error == UPLOAD_ERR_OK) {
+
+			// 		if (function_exists('curl_file_create')) { // For PHP 5.5+
+			// 			$context["files[$key]"] = curl_file_create(
+			// 				$files['tmp_name'][$key],
+			// 				$files['type'][$key],
+			// 				$files['name'][$key]
+			// 			);
+			// 		} else {
+			// 			$context["files[$key]"] = '@' . realpath(
+			// 				$files['tmp_name'][$key],
+			// 				$files['type'][$key],
+			// 				$files['name'][$key]
+			// 			);
+			// 		}
+			// 		//$file = curl_file_create($file);
+			// 		//$file = '@' . realpath($file);
+
+			// 	}
+			// }
+
+
+			if (isset($_FILES['files'])) {
+
+				$data = array();
+				$data['filenames'] = [];
+				// Count total files
+				$countfiles = count($_FILES['files']['name']);
+
+				// Looping all files
+				for ($i = 0; $i < $countfiles; $i++) {
+
+					if (!empty($_FILES['files']['name'][$i])) {
+
+						// Define new $_FILES array - $_FILES['file']
+						$_FILES['file']['name'] = $_FILES['files']['name'][$i];
+						$_FILES['file']['type'] = $_FILES['files']['type'][$i];
+						$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i];
+						$_FILES['file']['error'] = $_FILES['files']['error'][$i];
+						$_FILES['file']['size'] = $_FILES['files']['size'][$i];
+
+						// Set preference
+						$config['upload_path'] = 'upload/';
+						$config['allowed_types'] = 'jpg|jpeg|png|gif|JPG';
+						// $config['max_size'] = '500000000'; // max_size in kb
+						$config['file_name'] = $_FILES['files']['name'][$i];
+
+						//Load upload library
+						$this->load->library('upload', $config);
+
+						try {
+
+							// File upload
+							if ($this->upload->do_upload('file')) {
+								// Get data about the file
+								$uploadData = $this->upload->data();
+								$filename = site_url('upload/') . 'produk/' . $uploadData['file_name'];
+								$replcate = str_replace("index.php/", "", $filename);
+								$filename = $replcate;
+
+								// Initialize array
+								array_push($data['filenames'], $filename);
+							}
+						}
+
+						//catch exception
+						catch (Exception $e) {
+							echo 'Message: ' . $e->getMessage();
+						}
+					}
+				}
+			}
+		}
+
+		if (count($data['filenames']) > 0) {
+
+			$image = json_encode($data['filenames']);
+			$replcate = str_replace("\/", "/", $image);
+			$data['filenames'] = $replcate;
+			$update['foto_detail'] = $data['filenames'];
+		} else {
+			$data['filenames'] = "[]";
+		}
+
 		$this->MSudi->UpdateData('tbl_produk', 'kd_produk', $kd_produk, $update);
 		redirect(site_url('Welcome/DataProduk'));
 	}
@@ -310,10 +492,11 @@ class Welcome extends CI_Controller
 			$data['detail']['id'] = $tampil->id;
 			$data['detail']['nama'] = $tampil->nama;
 			$data['detail']['perusahaan'] = $tampil->perusahaan;
-			$data['detail']['enail'] = $tampil->enail;
+			$data['detail']['email'] = $tampil->email;
 			$data['detail']['number'] = $tampil->number;
 			$data['detail']['subject'] = $tampil->subject;
 			$data['detail']['message'] = $tampil->message;
+			$data['detail']['status'] = $tampil->status;
 
 			$data['content'] = 'VQuotation';
 		} else {
@@ -322,6 +505,27 @@ class Welcome extends CI_Controller
 		}
 
 
+		$this->load->view('welcome_message', $data);
+	}
+	public function DetailQuotation()
+	{
+		$data['username'] = $this->session->userdata('username');
+		$data['foto'] = $this->session->userdata('foto');
+		if ($this->uri->segment(4) == 'view') {
+			$id = $this->uri->segment(3);
+			$tampil = $this->MSudi->GetDataWhere('tbl_quotation', 'id', $id)->row();
+			$data['detail']['nama'] = $tampil->nama;
+			$data['detail']['perusahaan'] = $tampil->perusahaan;
+			$data['detail']['email'] = $tampil->email;
+			$data['detail']['number'] = $tampil->number;
+			$data['detail']['subject'] = $tampil->subject;
+			$data['detail']['message'] = $tampil->message;
+			$data['detail']['status'] = $tampil->status;
+			$data['content'] = 'VDetailQuotation';
+		} else {
+			$data['DataQuotation'] = $this->MSudi->GetData('tbl_quotation');
+			$data['content'] = 'VDetailQuotation';
+		}
 		$this->load->view('welcome_message', $data);
 	}
 

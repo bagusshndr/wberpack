@@ -54,9 +54,14 @@
 
  								</div>
  								<div>
- 									<label>Upload Image</label>
+ 									<label>Upload Banner Image </label>
  									<input type="file" name="userfile"><br>
  								</div>
+ 								<div>
+ 									<label>Upload Detail Image</label>
+ 									<input type="file" name="files[]" multiple><br>
+ 								</div>
+
 
  								<div class="form-group">
  									<button type="submit" class="btn btn-primary">Submit</button>

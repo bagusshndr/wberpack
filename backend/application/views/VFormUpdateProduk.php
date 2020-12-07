@@ -56,9 +56,28 @@
  									<div class="form-group">
  										<label>Foto Sebelumnnya</label><br>
  										<img src="<?php echo base_url('upload/produk/') . $detail['foto']; ?>" width="200px" height="200px" style="border-radius: 100%;"><br>
- 										<label for="exampleInputFile">File input</label>
+ 										<label for="exampleInputFile">Update Image Banner</label>
  										<input type="file" name="userfile" />
  										<!-- <p class="help-block">Example block-level help text here.</p> -->
+ 									</div>
+ 									<div class="form-group">
+ 										<label>Foto Sebelumnnya</label><br>
+ 										<?php
+											$images = $detail['foto_detail'];
+											if ($images != null) {
+												$imageList = json_decode($images);
+												foreach ($imageList as $image) {
+													echo "<img src='$image' class='img-fluid mb-2' alt='white sample' />";
+												}
+											}
+											//  
+
+											?>
+ 										<!-- <p class="help-block">Example block-level help text here.</p> -->
+ 									</div>
+ 									<div>
+ 										<label>Upload Detail Image</label>
+ 										<input type="file" name="files[]" multiple><br>
  									</div>
  									<div class="box-body pad">
  										<label>Keterangan</label>
