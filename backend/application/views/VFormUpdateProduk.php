@@ -55,7 +55,7 @@
 
  									<div class="form-group">
  										<label>Foto Sebelumnnya</label><br>
- 										<img src="<?php echo base_url('upload/produk/') . $detail['foto']; ?>" width="200px" height="200px" style="border-radius: 100%;"><br>
+ 										<img src="<?php echo $detail['foto']; ?>" width="200px" height="200px" style="border-radius: 100%;"><br>
  										<label for="exampleInputFile">Update Image Banner</label>
  										<input type="file" name="userfile" />
  										<!-- <p class="help-block">Example block-level help text here.</p> -->
@@ -77,7 +77,7 @@
  									</div>
  									<div>
  										<label>Upload Detail Image</label>
- 										<input type="file" name="files[]" multiple><br>
+ 										<input type="file" name="detailImage[]" multiple><br>
  									</div>
  									<div class="box-body pad">
  										<label>Keterangan</label>

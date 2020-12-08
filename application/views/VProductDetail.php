@@ -94,9 +94,20 @@
             <div class="portfolio-details-container">
 
                 <div class="owl-carousel portfolio-details-carousel">
-                    <img src="<?php echo base_url('backend/upload/produk/') . $DetailProduk->foto; ?>" style="width:900; height:600px;" alt="">
-                    <!-- <img src="<?php echo base_url('assets/img/slide/2.jpeg" class="img-fluid'); ?>" alt=""> -->
+                    <?php
+                    $fotoDetails = json_decode($DetailProduk->foto_detail);
+                    $fotoBanner = $DetailProduk->foto;
+                    // echo $fotoBanner;
+                    echo "<img src='$fotoBanner' style='width:900; height:600px;' alt=''>";
+                    foreach ($fotoDetails as $fotoDetail) {
+
+                        echo "<img src='$fotoDetail' style='width:900; height:600px;' alt=''>";
+                    }
+                    ?>
+
+                    <!-- <img src="<?php echo base_url('assets/img/slide/2.jpeg'); ?>" style="width:900; height:600px;" alt=""> -->
                     <!-- <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" style="width:900; height:500px;" alt=""> -->
+
                 </div>
 
                 <div class="portfolio-info">
