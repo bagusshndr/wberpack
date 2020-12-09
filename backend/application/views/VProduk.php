@@ -1,4 +1,6 @@
  <!-- Content Wrapper. Contains page content -->
+ <script src="<?php echo base_url('assets/jquery.min.js'); ?>"></script>
+
  <div class="content-wrapper">
  	<!-- Content Header (Page header) -->
  	<div class="content-header">
@@ -19,23 +21,19 @@
  					<div class="row">
  						<div class="col-12">
  							<div class="card-body">
- 								<form id="form1" method="POST">
+ 								<form id="form1" action="<?php echo site_url('Welcome/DeleteDataProduk'); ?>" method="POST">
  									<div class="card-header">
  										<a href="<?php echo site_url('Welcome/VFormAddProduk'); ?>" class="btn btn-success">
  											Tambah data
  										</a>
  										<div class="card-tools">
- 											<div class="input-group input-group-sm" style="width: 150px;">
- 												<a href="#" class="btn btn-xs btn-danger">
- 													Delete
- 												</a>
- 											</div>
+
  										</div>
  									</div>
  									<table class="table table-bordered table-striped">
  										<thead>
  											<tr>
- 												<th><input type="checkbox" id="select-all" /></th>
+ 												<th><input type="checkbox" id="check-all" /></th>
  												<th>No</th>
  												<th>Jenis Produk</th>
  												<th>Nama Produk</th>
@@ -53,11 +51,11 @@
 														$index = $index + 1;
 												?>
  													<tr>
- 														<td> <input type="checkbox" name="check" /></td>
+ 														<td> <input type="checkbox" name="kd_produk[]" value="<?php echo $ReadDS->kd_produk; ?>" /></td>
  														<td><?php echo $index ?></td>
  														<td><?php echo $ReadDS->jenis_produk; ?></td>
  														<td><?php echo $ReadDS->nama_produk; ?></td>
- 														<td><img width="50px" height="50px" src="<?php echo base_url('upload/produk/') . $ReadDS->foto; ?>"></td>
+ 														<td><img width="50px" height="50px" src="<?php echo $ReadDS->foto; ?>"></td>
  														<td><?php echo $ReadDS->keterangan; ?></td>
  														<td>
  															<a href="<?php echo site_url('Welcome/DataProduk/' . $ReadDS->kd_produk . '/view'); ?>" class="btn btn-xs btn-info">
@@ -76,6 +74,8 @@
 
  										</tbody>
  									</table>
+ 									<button type="button" id="btn-delete">DELETE</button>
+
  								</form>
  							</div>
  							<!-- /.card-body -->
@@ -111,8 +111,25 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <script>
  	$(document).ready(function() {
- 		$("#form1 #select-all").click(function() {
+ 		$("#form1 #check-all").click(function() {
  			$("#form1 input[type='checkbox']").prop('checked', this.checked);
+ 		});
+ 	});
+ </script>
+ <Script>
+ 	$(document).ready(function() { // When the page is ready (already loaded)
+ 		$("#check-all").click(function() { // When the user checks the checkbox all
+ 			if ($(this).is(":checked")) // If checkbox all is checked
+ 				$(".check-item").prop("checked", true); // check all student checkboxes with "check-item" classes
+ 			else // If checkbox all is not checked
+ 				$(".check-item").prop("checked", false); // un-check all student checkboxes with "check-item" classes
+ 		});
+
+ 		$("#btn-delete").click(function() { // When the user clicks the delete button
+ 			var confirm = window.confirm("Are you sure you want to delete these data?"); // Create a confirmation alert
+
+ 			if (confirm) // If the user clicks the "Ok" button
+ 				$("#form1").submit(); // Submit form
  		});
  	});
  </script>

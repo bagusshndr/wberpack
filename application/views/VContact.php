@@ -62,7 +62,7 @@
                               </div> -->
   							<div class="col-md-6 form-group">
   								<label for="name">Your Name</label>
-  								<input type="text" name="nama" class="form-control" id="nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+  								<input type="text" name="nama" class="form-control" id="nama" data-rule="required" data-msg="Please enter your name" />
   								<div class="validate"></div>
   							</div>
   							<div class="col-md-6 form-group">
@@ -73,19 +73,19 @@
   						</div>
   						<div class="form-row">
   							<div class="col-md-6 form-group">
-  								<label for="number">Your Number</label>
-  								<input type="number" name="number" class="form-control" id="number" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+  								<label for="number">Your phone Number</label>
+  								<input type="number" name="number" class="form-control" id="number" data-rule="required" data-msg="Please enter your number" />
   								<div class="validate"></div>
   							</div>
   							<div class="col-md-6 form-group">
   								<label for="perusahaan">Your Company</label>
-  								<input type="text" class="form-control" name="perusahaan" id="perusahaan" data-rule="perusahaan" data-msg="Please enter a valid Company" />
+  								<input type="text" class="form-control" name="perusahaan" id="perusahaan" data-rule="required" data-msg="Please enter a valid Company" />
   								<div class="validate"></div>
   							</div>
   						</div>
   						<div class="form-group">
   							<label for="subject">Subject</label>
-  							<input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+  							<input type="text" class="form-control" name="subject" id="subject" data-rule="required" data-msg="Please enter at least 8 chars of subject" />
   							<div class="validate"></div>
   						</div>
   						<div class="form-group">
@@ -99,7 +99,7 @@
                               <div class="error-message"></div>
                               <div class="sent-message">Your message has been sent. Thank you!</div>
                           </div> -->
-  						<div class="text-center"><button id="loginbtn" type="submit">Send Message</button></div>
+  						<div class="text-center"><button id="loginbtn" type="submit" onclick="simpan()">Send Message</button></div>
   					</form>
   				</div>
 
@@ -109,27 +109,56 @@
   </section><!-- End Contact Us Section -->
 
   <script>
-  	$('#loginbtn').on('click', function(e) {
-  		e.preventDefault();
-  		var data = $('#myForm').serialize();
-  		var base_url = '<?php echo base_url(); ?>'
-  		$.ajax({
-  			url: base_url + 'index.php/Welcome/AddDataContact',
-  			type: 'POST',
-  			data: data,
-  			success: function(data) {
+  	// $('#loginbtn').on('click', function(e) {
+  	// 	e.preventDefault();
 
-  				alert('Your message has been sent successfully. Our support team will get back to you.'); // here what you want to do with response
-  				document.getElementById("nama").value = '';
-  				document.getElementById("number").value = '';
-  				document.getElementById("email").value = '';
-  				document.getElementById("perusahaan").value = '';
-  				document.getElementById("subject").value = '';
-  				document.getElementById("message").value = '';
-  			}
-  		});
-  		return false;
+  	// 	// 	var x, text;
+
+  	// 	// 	// Get the value of the input field with id="numb"
+  	// 	// 	x = document.getElementById("nama").value;
+
+  	// 	// 	// If x is Not a Number or less than one or greater than 10
+  	// 	// 	if (isNaN(x) || x < 1 || x > 10) {
+  	// 	// 		text = "Input not valid";
+  	// 	// 	} else {
+  	// 	// 		text = "Input OK";
+  	// 	// 	}
+  	// 	// 	document.getElementById("demo").innerHTML = text;
+  	// 	// }
+  	// });
+
+  	function simpan() {
+
+  		if (document.getElementById("nama").value != '' &&
+  			document.getElementById("number").value != '' &&
+  			document.getElementById("email").value != '' &&
+  			document.getElementById("perusahaan").value != '' &&
+  			document.getElementById("subject").value != '' &&
+  			document.getElementById("message").value != '') {
 
 
-  	});
+  			var data = $('#myForm').serialize();
+  			debugger
+  			var base_url = '<?php echo base_url(); ?>'
+  			$.ajax({
+  				url: base_url + 'index.php/Welcome/AddDataContact',
+  				type: 'POST',
+  				data: data,
+  				success: function(data) {
+
+  					alert('Your message has been sent successfully. Our support team will get back to you.'); // here what you want to do with response
+  					document.getElementById("nama").value = '';
+  					document.getElementById("number").value = '';
+  					document.getElementById("email").value = '';
+  					document.getElementById("perusahaan").value = '';
+  					document.getElementById("subject").value = '';
+  					document.getElementById("message").value = '';
+  				}
+
+  			});
+  			return false;
+  		}
+
+
+  	}
   </script>

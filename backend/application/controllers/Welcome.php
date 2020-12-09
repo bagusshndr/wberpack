@@ -258,6 +258,10 @@ class Welcome extends CI_Controller
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$add['foto'] = implode($this->upload->data());
+			$filename = site_url('upload/') . 'produk/' . $add['foto'];
+			$replcate = str_replace("index.php/", "", $filename);
+			$replcate = str_replace("\/", "/", $replcate);
+			$add['foto'] = $replcate;
 		}
 		$data = array();
 		$data['filenames'] = [];
@@ -361,24 +365,39 @@ class Welcome extends CI_Controller
 		$update['kd_jenis_produk'] = $this->input->post('kd_jenis_produk');
 		$update['nama_produk'] = $this->input->post('nama_produk');
 		$update['keterangan'] = $this->input->post('keterangan');
+		$update['foto'] = $this->input->post('foto');
 		//$update['foto_user']= $this->input->post('foto_user');
 		// $update['st_user']= $this->input->post('st_user');
-
 		$config['upload_path'] = '././upload/produk';
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
 			$error = array('error' => $this->upload->display_errors());
-			//redirect(site_url('Welcome/VFormUpdateUser'));
-
+			redirect(site_url('Welcome/DataProduk'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$update['foto'] = implode($this->upload->data());
+			$filename = site_url('upload/') . 'produk/' . $update['foto'];
+			$replcate = str_replace("index.php/", "", $filename);
+			$replcate = str_replace("\/", "/", $replcate);
+			$update['foto'] = $replcate;
 		}
+
+		// $config['upload_path'] = '././upload/produk';
+		// $config['allowed_types'] = 'gif|jpg|png';
+		// $this->load->library('upload', $config);
+		// if (!$this->upload->do_upload('userfile')) {
+		// 	$error = array('error' => $this->upload->display_errors());
+		// 	//redirect(site_url('Welcome/VFormUpdateUser'));
+
+		// } else {
+		// 	$data = array('upload_data' => $this->upload->data());
+		// 	$update['foto'] = implode($this->upload->data());
+		// }
 
 		$data = array();
 		$data['filenames'] = [];
-		$files = (isset($_FILES['files'])) ? $_FILES['files'] : array();
+		$files = (isset($_FILES['detailImage'])) ? $_FILES['detailImage'] : array();
 
 		if (isset($files['name'])) {
 
@@ -405,30 +424,30 @@ class Welcome extends CI_Controller
 			// }
 
 
-			if (isset($_FILES['files'])) {
+			if (isset($_FILES['detailImage'])) {
 
 				$data = array();
 				$data['filenames'] = [];
 				// Count total files
-				$countfiles = count($_FILES['files']['name']);
+				$countfiles = count($_FILES['detailImage']['name']);
 
 				// Looping all files
 				for ($i = 0; $i < $countfiles; $i++) {
 
-					if (!empty($_FILES['files']['name'][$i])) {
+					if (!empty($_FILES['detailImage']['name'][$i])) {
 
 						// Define new $_FILES array - $_FILES['file']
-						$_FILES['file']['name'] = $_FILES['files']['name'][$i];
-						$_FILES['file']['type'] = $_FILES['files']['type'][$i];
-						$_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i];
-						$_FILES['file']['error'] = $_FILES['files']['error'][$i];
-						$_FILES['file']['size'] = $_FILES['files']['size'][$i];
+						$_FILES['file']['name'] = $_FILES['detailImage']['name'][$i];
+						$_FILES['file']['type'] = $_FILES['detailImage']['type'][$i];
+						$_FILES['file']['tmp_name'] = $_FILES['detailImage']['tmp_name'][$i];
+						$_FILES['file']['error'] = $_FILES['detailImage']['error'][$i];
+						$_FILES['file']['size'] = $_FILES['detailImage']['size'][$i];
 
 						// Set preference
 						$config['upload_path'] = 'upload/';
 						$config['allowed_types'] = 'jpg|jpeg|png|gif|JPG';
 						// $config['max_size'] = '500000000'; // max_size in kb
-						$config['file_name'] = $_FILES['files']['name'][$i];
+						$config['file_name'] = $_FILES['detailImage']['name'][$i];
 
 						//Load upload library
 						$this->load->library('upload', $config);
@@ -475,9 +494,12 @@ class Welcome extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['foto'] = $this->session->userdata('foto');
 
-		$kd_produk = $this->uri->segment('3');
+		$kd_produk = $this->input->post('kd_produk');
 
-		$this->MSudi->DeleteData('tbl_produk', 'kd_produk', $kd_produk);
+		foreach ($kd_produk as $produk_id) {
+			$this->MSudi->DeleteData('tbl_produk', 'kd_produk', $produk_id);
+		}
+		// $this->MSudi->DeleteData('tbl_produk', 'kd_produk', $kd_produk);
 		redirect(site_url('Welcome/DataProduk'));
 	}
 

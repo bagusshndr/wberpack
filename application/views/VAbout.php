@@ -3,7 +3,7 @@
      <div class="container">
          <div class="section-title">
              <h2>About Us</h2>
-             <h5 style="float:left;">Sejarah Kami</h5>
+             <h4 class="my-3" style="float: left;">Sejarah Kami</h4>
              <br>
              <br>
              <p style="color: black; text-align: justify;">WberPack berdiri pada Tahun 2017. WberPack sendiri didirikan oleh 3 orang profesional yang memiliki pengalaman dibidang paper packaging dan bidang finance selama 16 tahun.
