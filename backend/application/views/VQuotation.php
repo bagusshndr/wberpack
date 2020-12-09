@@ -23,7 +23,7 @@
  									<table class="table table-head-fixed text-nowrap">
  										<thead>
  											<tr>
- 												<th><input type="checkbox" id="select-all" /></th>
+
  												<th>No</th>
  												<th>Nama</th>
  												<th>Perusahaan</th>
@@ -42,7 +42,7 @@
 														$index = $index + 1;
 												?>
  													<tr>
- 														<td> <input type="checkbox" name="check" /></td>
+
  														<td><?php echo $index; ?></td>
  														<td><?php echo $ReadDS->nama; ?></td>
  														<td><?php echo $ReadDS->perusahaan; ?></td>

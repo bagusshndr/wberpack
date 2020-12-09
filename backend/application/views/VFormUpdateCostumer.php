@@ -38,7 +38,7 @@
  										<label>Foto Sebelumnya</label><br>
  										<input type="hidden" name="kd_costumer" class="form-control" value="<?php echo $detail['kd_costumer']; ?>">
 
- 										<img src="<?php echo base_url('upload/costumer/') . $detail['foto']; ?>" width="200px" height="200px" style="border-radius: 100%;"><br>
+ 										<img src="<?php echo $detail['foto']; ?>" width="200px" height="200px" style="border-radius: 100%;"><br>
  										<label>Upload Image</label>
  										<input type="file" name="userfile"><br>
  									</div>
