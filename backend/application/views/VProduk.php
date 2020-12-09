@@ -61,9 +61,9 @@
  															<a href="<?php echo site_url('Welcome/DataProduk/' . $ReadDS->kd_produk . '/view'); ?>" class="btn btn-xs btn-info">
  																Edit
  															</a>
- 															<a href="<?php echo site_url('Welcome/DeleteDataProduk/' . $ReadDS->kd_produk); ?>" class="btn btn-xs btn-danger">
+ 															<!-- <a href="<?php echo site_url('Welcome/DeleteDataProduk/' . $ReadDS->kd_produk); ?>" class="btn btn-xs btn-danger">
  																Delete
- 															</a>
+ 															</a> -->
 
  														</td>
  													</tr>
@@ -74,7 +74,7 @@
 
  										</tbody>
  									</table>
- 									<button type="button" id="btn-delete">DELETE</button>
+ 									<button type="button" id="btn-delete" class="btn btn-xs btn-danger">DELETE</button>
 
  								</form>
  							</div>

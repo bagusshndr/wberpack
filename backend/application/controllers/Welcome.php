@@ -142,8 +142,8 @@ class Welcome extends CI_Controller
 		// $add['foto_user']= $this->input->post('foto_user');
 		// $add['st_user']= $this->input->post('st_user');  
 
-		$config['upload_path'] = '././upload';
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['upload_path'] = '././upload/produk';
+		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
 			$error = array('error' => $this->upload->display_errors());
@@ -151,6 +151,10 @@ class Welcome extends CI_Controller
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$add['foto'] = implode($this->upload->data());
+			$filename = site_url('upload/') . 'produk/' . $add['foto'];
+			$replcate = str_replace("index.php/", "", $filename);
+			$replcate = str_replace("\/", "/", $replcate);
+			$add['foto'] = $replcate;
 		}
 		$this->MSudi->AddData('tbl_users', $add);
 		\redirect(site_url('Welcome/DataUser'));
@@ -168,16 +172,19 @@ class Welcome extends CI_Controller
 		//$update['foto_user']= $this->input->post('foto_user');
 		// $update['st_user']= $this->input->post('st_user');
 
-		$config['upload_path'] = '././upload';
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['upload_path'] = '././upload/produk';
+		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
 			$error = array('error' => $this->upload->display_errors());
-			//redirect(site_url('Welcome/VFormUpdateUser'));
-
+			redirect(site_url('Welcome/DataUser'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$update['foto'] = implode($this->upload->data());
+			$filename = site_url('upload/') . 'produk/' . $update['foto'];
+			$replcate = str_replace("index.php/", "", $filename);
+			$replcate = str_replace("\/", "/", $replcate);
+			$update['foto'] = $replcate;
 		}
 
 		$this->MSudi->UpdateData('tbl_users', 'kd_user', $kd_user, $update);
@@ -592,7 +599,7 @@ class Welcome extends CI_Controller
 		$add['judul'] = $this->input->post('judul');
 		$add['deskripsi'] = $this->input->post('deskripsi');
 
-		$config['upload_path'] = '././upload/slide';
+		$config['upload_path'] = '././upload/produk';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
@@ -601,6 +608,10 @@ class Welcome extends CI_Controller
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$add['foto'] = implode($this->upload->data());
+			$filename = site_url('upload/') . 'produk/' . $add['foto'];
+			$replcate = str_replace("index.php/", "", $filename);
+			$replcate = str_replace("\/", "/", $replcate);
+			$add['foto'] = $replcate;
 		}
 		$this->MSudi->AddData('tbl_Slide', $add);
 		redirect(site_url('Welcome/DataSlide'));
@@ -615,16 +626,19 @@ class Welcome extends CI_Controller
 		$update['judul'] = $this->input->post('judul');
 		$update['deskripsi'] = $this->input->post('deskripsi');
 
-		$config['upload_path'] = '././upload/slide';
+		$config['upload_path'] = '././upload/produk';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
 			$error = array('error' => $this->upload->display_errors());
-			//redirect(site_url('Welcome/VFormUpdateUser'));
-
+			redirect(site_url('Welcome/DataSlide'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$update['foto'] = implode($this->upload->data());
+			$filename = site_url('upload/') . 'produk/' . $update['foto'];
+			$replcate = str_replace("index.php/", "", $filename);
+			$replcate = str_replace("\/", "/", $replcate);
+			$update['foto'] = $replcate;
 		}
 
 		$this->MSudi->UpdateData('tbl_slide', 'kd_slide', $kd_slide, $update);
@@ -635,8 +649,11 @@ class Welcome extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['foto'] = $this->session->userdata('foto');
 
-		$kd_slide = $this->uri->segment('3');
-		$this->MSudi->DeleteData('tbl_slide', 'kd_slide', $kd_slide);
+		$kd_slide = $this->input->post('kd_slide');
+
+		foreach ($kd_slide as $slide_id) {
+			$this->MSudi->DeleteData('tbl_slide', 'kd_slide', $slide_id);
+		}
 		redirect(site_url('Welcome/DataSlide'));
 	}
 
@@ -682,15 +699,19 @@ class Welcome extends CI_Controller
 		$add['nama_perusahaan'] = $this->input->post('nama_perusahaan');
 		$add['foto'] = $this->input->post('foto');
 
-		$config['upload_path'] = '././upload/costumer';
+		$config['upload_path'] = '././upload/produk';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
 			$error = array('error' => $this->upload->display_errors());
-			redirect(site_url('Welcome/VFormAddProduk'));
+			redirect(site_url('Welcome/VFormAddCostumer'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$add['foto'] = implode($this->upload->data());
+			$filename = site_url('upload/') . 'produk/' . $add['foto'];
+			$replcate = str_replace("index.php/", "", $filename);
+			$replcate = str_replace("\/", "/", $replcate);
+			$add['foto'] = $replcate;
 		}
 		$this->MSudi->AddData('tbl_costumer', $add);
 		redirect(site_url('Welcome/DataCostumer'));
@@ -703,18 +724,21 @@ class Welcome extends CI_Controller
 
 		$kd_costumer = $this->input->post('kd_costumer');
 		$update['nama_perusahaan'] = $this->input->post('nama_perusahaan');
-		$update['foto'] = $this->input->post('foto');
 
-		$config['upload_path'] = '././upload/costumer';
+
+		$config['upload_path'] = '././upload/produk';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
 			$error = array('error' => $this->upload->display_errors());
-			//redirect(site_url('Welcome/VFormUpdateUser'));
-
+			redirect(site_url('Welcome/VFormAddCostumer'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$update['foto'] = implode($this->upload->data());
+			$filename = site_url('upload/') . 'produk/' . $update['foto'];
+			$replcate = str_replace("index.php/", "", $filename);
+			$replcate = str_replace("\/", "/", $replcate);
+			$update['foto'] = $replcate;
 		}
 
 		$this->MSudi->UpdateData('tbl_costumer', 'kd_costumer', $kd_costumer, $update);
@@ -725,8 +749,12 @@ class Welcome extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['foto'] = $this->session->userdata('foto');
 
-		$kd_costumer = $this->uri->segment('3');
-		$this->MSudi->DeleteData('tbl_costumer', 'kd_costumer', $kd_costumer);
+		$kd_costumer = $this->input->post('kd_costumer');
+
+		foreach ($kd_costumer as $costumer_id) {
+			$this->MSudi->DeleteData('tbl_costumer', 'kd_costumer', $costumer_id);
+		}
+
 		redirect(site_url('Welcome/DataCostumer'));
 	}
 
@@ -886,8 +914,12 @@ class Welcome extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['foto'] = $this->session->userdata('foto');
 
-		$kd_jenis = $this->uri->segment('3');
-		$this->MSudi->DeleteData('tbl_jenis_produk', 'kd_jenis', $kd_jenis);
+		$kd_jenis = $this->input->post('kd_jenis');
+
+		foreach ($kd_jenis as $jenis_id) {
+			$this->MSudi->DeleteData('tbl_jenis_produk', 'kd_jenis', $jenis_id);
+		}
+
 		redirect(site_url('Welcome/DataJenisProduk'));
 	}
 
@@ -952,8 +984,12 @@ class Welcome extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['foto'] = $this->session->userdata('foto');
 
-		$kd_kategori = $this->uri->segment('3');
-		$this->MSudi->DeleteData('tbl_kategori', 'kd_kategori', $kd_kategori);
+		$kd_kategori = $this->input->post('kd_kategori');
+
+		foreach ($kd_kategori as $kategori_id) {
+			$this->MSudi->DeleteData('tbl_kategori', 'kd_kategori', $kategori_id);
+		}
+
 		redirect(site_url('Welcome/DataKategori'));
 	}
 
