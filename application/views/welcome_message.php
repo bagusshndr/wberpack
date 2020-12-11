@@ -173,7 +173,7 @@
           for ($i = 0; $i < count($slide); $i++) {
           ?>
             <div class="carousel-item <?php ($i == 0) ? print 'active' : print ''; ?>">
-              <div class="carousel-background"><img src="<?= base_url('backend/upload/slide/' . $slide[$i]->foto); ?>" alt=""></div>
+              <div class="carousel-background"><img src="<?= $slide[$i]->foto; ?>" alt=""></div>
               <div class="carousel-container">
                 <div class="carousel-content">
                   <h2 class="animate__animated animate__fadeInDown"><?= $slide[$i]->judul; ?></h2>
