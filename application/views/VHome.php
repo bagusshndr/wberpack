@@ -236,7 +236,7 @@
                 if (!empty($DataClient)) {
                     foreach ($DataClient as $ReadDS) {
                 ?>
-                        <div class="slide"> <img src="<?php echo base_url('backend/upload/costumer/') . $ReadDS->foto; ?>" class="img-fluid" alt=""></div>
+                        <div class="slide"> <img src="<?php echo $ReadDS->foto; ?>" class="img-fluid" alt=""></div>
                 <?php
                     }
                 }
