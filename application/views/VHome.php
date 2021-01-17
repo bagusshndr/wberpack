@@ -76,6 +76,37 @@
       </div> -->
     </section><!-- End Our Portfolio Section -->
 
+    <section id="portfolio" class="portfolio section-bg">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Our Portfolio</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+                    in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="row portfolio-container">
+
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <img src="<?php echo base_url('assets/img/portfolio/portfolio-1.jpg'); ?>" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>App 1</h4>
+                            <p>App</p>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Our Portfolio Section -->
+
+
     <!-- ======= Cta Section ======= -->
     <section class="cta">
         <div class="container">
@@ -181,7 +212,7 @@
                 foreach ($DataClient as $ReadDS) {
             ?>
                     <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" data-aos="zoom-in">
-                        <img src="<?php echo base_url('backend/upload/costumer/') . $ReadDS->foto; ?>" class="img-fluid" alt="">
+                        <img src="<?php echo $ReadDS->foto; ?>" class="img-fluid" alt="">
                     </div>
             <?php
                 }
@@ -205,7 +236,7 @@
                 if (!empty($DataClient)) {
                     foreach ($DataClient as $ReadDS) {
                 ?>
-                        <div class="slide"> <img src="<?php echo base_url('backend/upload/costumer/') . $ReadDS->foto; ?>" class="img-fluid" alt=""></div>
+                        <div class="slide"> <img src="<?php echo $ReadDS->foto; ?>" class="img-fluid" alt=""></div>
                 <?php
                     }
                 }
