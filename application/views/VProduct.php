@@ -16,23 +16,24 @@
 
                   <?php if (count($DataJenis) > 0) {
                     ?>
-                      <ul id="portfolio-flters">
-                          <li data-filter="*" class="filter-active">All</li>
-                          <?php
+                  <ul id="portfolio-flters">
+                      <li data-filter="*" class="filter-active">All</li>
+                      <?php
                             if (!empty($DataJenis)) {
                                 foreach ($DataJenis as $ReadDS) {
                             ?>
-                                  <li data-filter=".filter-app-<?php echo $ReadDS->kd_jenis; ?>"><?php echo $ReadDS->jenis_produk; ?></li>
-                                  <!-- <li data-filter=".filter-card">Card</li> -->
-                          <?php
+                      <li data-filter=".filter-app-<?php echo $ReadDS->kd_jenis; ?>">
+                          <?php echo $ReadDS->jenis_produk; ?></li>
+                      <!-- <li data-filter=".filter-card">Card</li> -->
+                      <?php
                                 }
                             }
 
                             ?>
-                      </ul>
+                  </ul>
                   <?php } else {
                     ?>
-                      <p style="font-size: 30px;">Product Not Found</p>
+                  <p style="font-size: 30px;">Product Not Found</p>
                   <?php } ?>
               </div>
           </div>
@@ -42,21 +43,23 @@
                 if (!empty($DataProduk)) {
                     foreach ($DataProduk as $ReadDS) {
                 ?>
-                      <div class="col-lg-4 col-md-6 portfolio-item filter-app-<?php echo $ReadDS->kd_jenis_produk; ?>">
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app-<?php echo $ReadDS->kd_jenis_produk; ?>">
 
-                          <div class="portfolio-wrap">
+                  <div class="portfolio-wrap">
 
-                              <img src="<?php echo base_url('backend/upload/produk/') . $ReadDS->foto; ?>" class="img-fluid" alt="">
-                              <div class="portfolio-info">
-                                  <h4><?php echo $ReadDS->nama_produk; ?></h4>
-                                  <p><?php echo $ReadDS->jenis_produk; ?></p>
-                              </div>
-                              <div class="portfolio-links">
-                                  <a href="<?php echo base_url('backend/upload/produk/') . $ReadDS->foto; ?>" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-                                  <a href="<?php echo site_url('Welcome/VProductDetail?id=' . $ReadDS->kd_produk); ?>" title="More Details"><i class="bx bx-link"></i></a>
-                              </div>
-                          </div>
+                      <img src="<?php echo $ReadDS->foto; ?>" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                          <h4><?php echo $ReadDS->nama_produk; ?></h4>
+                          <p><?php echo $ReadDS->jenis_produk; ?></p>
                       </div>
+                      <div class="portfolio-links">
+                          <a href="<?php echo base_url('backend/upload/produk/') . $ReadDS->foto; ?>"
+                              data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                          <a href="<?php echo site_url('Welcome/VProductDetail?id=' . $ReadDS->kd_produk); ?>"
+                              title="More Details"><i class="bx bx-link"></i></a>
+                      </div>
+                  </div>
+              </div>
               <?php
                     }
                 }
