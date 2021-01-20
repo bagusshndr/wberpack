@@ -142,7 +142,7 @@ class Welcome extends CI_Controller
 		// $add['foto_user']= $this->input->post('foto_user');
 		// $add['st_user']= $this->input->post('st_user');  
 
-		$config['upload_path'] = '././upload/produk';
+		$config['upload_path'] = '././upload/user';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
@@ -151,7 +151,7 @@ class Welcome extends CI_Controller
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$add['foto'] = implode($this->upload->data());
-			$filename = site_url('upload/') . 'produk/' . $add['foto'];
+			$filename = site_url('upload/') . 'user/' . $add['foto'];
 			$replcate = str_replace("index.php/", "", $filename);
 			$replcate = str_replace("\/", "/", $replcate);
 			$add['foto'] = $replcate;
@@ -172,16 +172,17 @@ class Welcome extends CI_Controller
 		//$update['foto_user']= $this->input->post('foto_user');
 		// $update['st_user']= $this->input->post('st_user');
 
-		$config['upload_path'] = '././upload/produk';
+		$config['upload_path'] = '././upload/user';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
+
 		if (!$this->upload->do_upload('userfile')) {
-			$error = array('error' => $this->upload->display_errors());
-			redirect(site_url('Welcome/DataUser'));
+			// $error = array('error' => $this->upload->display_errors());
+			// redirect(site_url('Welcome/DataUser'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$update['foto'] = implode($this->upload->data());
-			$filename = site_url('upload/') . 'produk/' . $update['foto'];
+			$filename = site_url('upload/') . 'user/' . $update['foto'];
 			$replcate = str_replace("index.php/", "", $filename);
 			$replcate = str_replace("\/", "/", $replcate);
 			$update['foto'] = $replcate;
@@ -379,8 +380,8 @@ class Welcome extends CI_Controller
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
-			$error = array('error' => $this->upload->display_errors());
-			redirect(site_url('Welcome/DataProduk'));
+			// $error = array('error' => $this->upload->display_errors());
+			// redirect(site_url('Welcome/DataProduk'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$update['foto'] = implode($this->upload->data());
@@ -492,7 +493,9 @@ class Welcome extends CI_Controller
 		} else {
 			$data['filenames'] = "[]";
 		}
-
+		if ($update['foto'] == null && $update['foto']==''){
+			unset($update['foto']);
+		} 
 		$this->MSudi->UpdateData('tbl_produk', 'kd_produk', $kd_produk, $update);
 		redirect(site_url('Welcome/DataProduk'));
 	}
@@ -599,7 +602,7 @@ class Welcome extends CI_Controller
 		$add['judul'] = $this->input->post('judul');
 		$add['deskripsi'] = $this->input->post('deskripsi');
 
-		$config['upload_path'] = '././upload/produk';
+		$config['upload_path'] = '././upload/slide';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
@@ -608,7 +611,7 @@ class Welcome extends CI_Controller
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$add['foto'] = implode($this->upload->data());
-			$filename = site_url('upload/') . 'produk/' . $add['foto'];
+			$filename = site_url('upload/') . 'slide/' . $add['foto'];
 			$replcate = str_replace("index.php/", "", $filename);
 			$replcate = str_replace("\/", "/", $replcate);
 			$add['foto'] = $replcate;
@@ -626,16 +629,16 @@ class Welcome extends CI_Controller
 		$update['judul'] = $this->input->post('judul');
 		$update['deskripsi'] = $this->input->post('deskripsi');
 
-		$config['upload_path'] = '././upload/produk';
+		$config['upload_path'] = '././upload/slide';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
-			$error = array('error' => $this->upload->display_errors());
-			redirect(site_url('Welcome/DataSlide'));
+			// $error = array('error' => $this->upload->display_errors());
+			// redirect(site_url('Welcome/DataSlide'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$update['foto'] = implode($this->upload->data());
-			$filename = site_url('upload/') . 'produk/' . $update['foto'];
+			$filename = site_url('upload/') . 'slide/' . $update['foto'];
 			$replcate = str_replace("index.php/", "", $filename);
 			$replcate = str_replace("\/", "/", $replcate);
 			$update['foto'] = $replcate;
@@ -699,7 +702,7 @@ class Welcome extends CI_Controller
 		$add['nama_perusahaan'] = $this->input->post('nama_perusahaan');
 		$add['foto'] = $this->input->post('foto');
 
-		$config['upload_path'] = '././upload/produk';
+		$config['upload_path'] = '././upload/costumer';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
@@ -726,16 +729,16 @@ class Welcome extends CI_Controller
 		$update['nama_perusahaan'] = $this->input->post('nama_perusahaan');
 
 
-		$config['upload_path'] = '././upload/produk';
+		$config['upload_path'] = '././upload/costumer';
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
-			$error = array('error' => $this->upload->display_errors());
-			redirect(site_url('Welcome/VFormAddCostumer'));
+			// $error = array('error' => $this->upload->display_errors());
+			// redirect(site_url('Welcome/VFormAddCostumer'));
 		} else {
 			$data = array('upload_data' => $this->upload->data());
 			$update['foto'] = implode($this->upload->data());
-			$filename = site_url('upload/') . 'produk/' . $update['foto'];
+			$filename = site_url('upload/') . 'costumer/' . $update['foto'];
 			$replcate = str_replace("index.php/", "", $filename);
 			$replcate = str_replace("\/", "/", $replcate);
 			$update['foto'] = $replcate;
@@ -824,7 +827,7 @@ class Welcome extends CI_Controller
 		$config['allowed_types'] = 'gif|jpg|png|JPG';
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {
-			$error = array('error' => $this->upload->display_errors());
+			// $error = array('error' => $this->upload->display_errors());
 			//redirect(site_url('Welcome/VFormUpdateUser'));
 
 		} else {
