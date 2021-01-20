@@ -493,7 +493,9 @@ class Welcome extends CI_Controller
 		} else {
 			$data['filenames'] = "[]";
 		}
-
+		if ($update['foto'] == null && $update['foto']==''){
+			unset($update['foto']);
+		} 
 		$this->MSudi->UpdateData('tbl_produk', 'kd_produk', $kd_produk, $update);
 		redirect(site_url('Welcome/DataProduk'));
 	}
