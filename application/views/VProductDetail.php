@@ -99,10 +99,13 @@
                     $fotoBanner = $DetailProduk->foto;
                     // echo $fotoBanner;
                     echo "<img src='$fotoBanner' style='width:900; height:600px;' alt=''>";
-                    foreach ($fotoDetails as $fotoDetail) {
+                    if ($fotoDetails !=''){
+                        foreach ($fotoDetails as $fotoDetail) {
 
-                        echo "<img src='$fotoDetail' style='width:900; height:600px;' alt=''>";
+                            echo "<img src='$fotoDetail' style='width:900; height:600px;' alt=''>";
+                        }
                     }
+                    
                     ?>
 
                     <!-- <img src="<?php echo base_url('assets/img/slide/2.jpeg'); ?>" style="width:900; height:600px;" alt=""> -->
