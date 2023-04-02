@@ -32,20 +32,22 @@
   								<h4 style="color: black;">Call Us</h4>
   							</a>
   							<p>(021) 83714629</p>
+  								<h4 style="color: black;">Whatsapp</h4>
+  							<p>082114123372</p>
   						</div>
   						<div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch">
   							<a href="#"> <i class="bx bx-envelope"></i></a>
-  							<a href="mailto:bagussuhendri19@gmail.com">
+  							<a href="mailto:sales@wberpack.com">
   								<h4 style="color: black;">Email Us</h4>
   							</a>
 
   							</a>
-  							<p>contact@example.com<br>info@example.com</p>
+  							<p>sales@wberpack.com<br></p>
   						</div>
   						<div class="col-lg-6 info d-flex flex-column align-items-stretch">
   							<i class="bx bx-time-five"></i>
   							<h4>Working Hours</h4>
-  							<p>Mon - Fri: 9AM to 5PM<br>Sunday: 9AM to 1PM</p>
+  							<p>Mon - Fri: 8AM to 4PM<br>Saturday: 8AM to 12PM</p>
   						</div>
   					</div>
 
@@ -53,6 +55,7 @@
 
   				<div class="col-lg-6 d-flex align-items-stretch contact-form-wrap">
   					<form action="<?php echo site_url('Welcome/AddDataContact'); ?>" method="post" enctype="multipart/form-data" class="php-email-form" id="myForm">
+  					    	<h2 style="color: black;">What Do You Need?</h2>
   						<div class="form-row">
   							<!-- <div class="form-group ">
                                   <?php if (isset($success)) { ?>

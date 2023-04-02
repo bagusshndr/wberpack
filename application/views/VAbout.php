@@ -1,224 +1,304 @@
- <!-- ======= About Us Section ======= -->
- <section id="about" class="about">
-     <div class="container">
-         <div class="section-title">
-             <h2>About Us</h2>
-             <h4 class="my-3" style="float: left;">Sejarah Kami</h4>
-             <br>
-             <br>
-             <p style="color: black; text-align: justify;">WberPack berdiri pada Tahun 2017. WberPack sendiri didirikan
-                 oleh 3 orang profesional yang memiliki pengalaman dibidang paper packaging dan bidang finance selama 16
-                 tahun.
-                 Bermula ketika pendiri perusahaan pernah melakukan invest pasif pada bidang karton box namun menemui
-                 kegagalan. Setelah mengalami kegagalan, pendiri perusahaan mencoba memanfaatkan
-                 yang ada dengan keahlian pada bidang packaging dan paper core. Para pendiri perusahaan memulai bisnis
-                 ini dari awal dan memutuskan mendirikan sebuah perusahaan.
-                 Terbentuk PT. Wahana Bermuda Nusantara dan dikenal sebagai WBN yang sekarang menjadi WberPack.
-             </p>
-             <br>
-             <p style="color: black; text-align: justify;">Pada awal berdiri PT. Wahana Bermuda Nusantara beroperasi
-                 gudang kecil di daerah Kerangan dengan
-                 menggunakan 1 mesin dan hanya terdapat 4 orang karyawan, karena keterbatasan tenaga kerja pendiri
-                 perusahaan juga turut ikut
-                 serta dalam memproduksi pesanan pelanggan. Pada awal berdiri WberPack hanya mendapatkan penghasilan 6
-                 juta rupiah perbulan.
-                 Di Tahun kedua WberPack sudah memiliki 45 karyawan dan mampu menorehkan penjualan hingga 825 juta
-                 rupiah perbulan dimana
-                 sudah ada 21 pelanggan tetap yang mempercayai WberPack sebagai pemasok sebagai produk pendukung untuk
-                 perusahaan mereka.
-                 Seiring dengan berjalannya waktu, saat ini WberPack juga sudah memiliki 80 karyawan dengan waktu
-                 produksi mencapai 24 jam dan
-                 mampu menghasilkan 3 Ton produksi per hari atau sekitar 21.000 produksi dalam sehari.produk dalam
-                 sehari. Saat ini WberPack juga terus berkembang dengan peningkatan penjualan yang terjadi secara
-                 konsisten setiap tahun dan telah menghasilkan penjualan hingga mencapai angka 1.7 Milyar Rupiah
-                 perbulan. Bahkan mampu bertahan pada saat terjadi pandemi Covid 19.
-             </p>
-             <br>
-             <p style="color: black; text-align: justify;">Setelah berjalan dari tahun 2017 PT. Wahana Bermuda Nusantara
-                 yang sebelum nya dikenal dengan WBN pada tahun 2020, memutuskan untuk melakukan
-                 melakukan rebranding menjadi WberPack termasuk logo baru yang lebih memiliki karakter dan mudah
-                 dikenal. Dimana kami ingin menguatkan brand image kami dan membuktikan
-                 bahwa perusahaan kami serius bergerak dalam industri paper core.
-                 WberPack (PT. Wahana Bermuda Nusantara) memiliki produk utama yaitu Paper Core. Paper Core menjadi
-                 produk yang bernilai tinggi dan paling banyak diproduksi saat ini.
-                 Dimana produk paper core dikelompokkan dalam beberapa kategori antara lain Paper Core dengan jenis
-                 Brown Kraft, White Kraft, dan Non-Craft. Produk paper core dapat disesuaikan
-                 mulai dari ukuran diameter luar dan dalam, ketebalan, panjang, pencetakan logo pada bagian luar maupun
-                 dalam paper core dengan sablon, dan menentukan bahan yang akan digunakan sesuai dengan kebutuhan.
-                 WberPack juga memproduksi 6 jenis produk paper seperti Honeycomb, Karton Box, Layer Bundar, Paper Core
-                 Celengan, Paper Pallet, dan Edge Protector.
-             </p>
-         </div>
-
-         <div class="row">
-             <div class="col-lg-6 pt-4 pt-lg-0 content">
-                 <div class="skills-content">
-
-                     <h4 class="my-3">Visi</h4>
-                     <p style="color: black; text-align: justify;">Menjadi perusahaan packaging yang berkembang,
-                         dipercaya dan mampu menciptakan nilai tambah bagi pelanggan, serta mampu meningkatkan sumber
-                         daya Perusahaan. Kedepannya kami akan terus melakukan inovasi
-                         untuk memproduksi berbagai macam jenis packaging yang ada dipasaran dimana memegang peranan
-                         menjadi market leader dengan kualitas berstandar Internasional.
-                     </p>
-                 </div>
-             </div>
-             <div class="col-lg-6">
-                 <img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-fluid" alt="">
-             </div>
-         </div>
-         <section id="about" class="about1">
-             <div class="container">
-             </div>
-         </section><!-- End About Us Section -->
-         <div class="row">
-             <div class="col-lg-6">
-                 <img src="<?php echo base_url('assets/img/2.jpg'); ?>" class="img-fluid" alt="">
-             </div>
-             <div class="col-lg-6 pt-4 pt-lg-0 content">
-                 <div class="skills-content">
-                     <h4 class="my-3">Misi</h4>
-                     <p style="color: black; text-align: justify;">WberPack senantiasa mengedepankan jaminan kualitas
-                         dari setiap produk kepada pelanggan. Membangun kepercayaan bisnis melalui kerjasama dengan
-                         perusahaan-perusahaan yang terpercaya dan berdedikasi tinggi dalam menciptakan produk. Kami
-                         terus meningkatkan kualitas sumber daya manusia dan mengutamakan kesejahteraan tenaga kerja.
-                         WberPack semakin memperkuat citra merek dengan menyiapkan strategi dan ide-ide yang inovatif
-                         sesuai dengan kebutuhan dan selera pelanggan, serta konsisten dengan mempersembahkan layanan
-                         yang berkualitas. Kami juga memastikan keuntungan kepada pemilik perusahaan dan tetap membantu
-                         usaha lain untuk terus tetap berkembang melalui kerjasama yang dijalin. Kami juga berkomitmen
-                         untuk menjaga lingkungan sekitar dengan bahan produk yang tidak merusak lingkungan dan
-                         pengolahan limbah melalui proses daur ulang yang ketat dan ramah lingkungan.
-                     </p>
-                 </div>
-             </div>
-         </div>
-         <section id="about" class="about1">
-             <div class="container">
-             </div>
-         </section><!-- End About Us Section -->
-         <div class="row">
-             <div class="col-lg-6 pt-4 pt-lg-0 content">
-                 <div class="skills-content">
-                     <h4 class="my-3">Komitmen</h4>
-                     <p style="color: black; text-align: justify;">Komitmen WberPack adalah mempertahankan visi
-                         kedepannya sebagai pemimpin industri packaging dengan terus memberikan yang terbaik kepada
-                         pelanggan. Dukungan pemilik perusahaan, keahlian manajemen yang dikelola dengan baik, dedikasi,
-                         integritas serta loyalitas tenaga kerja. Dan yang terpenting adalah, kesinambungan kerjasama
-                         antara pelanggan, pasti berhasil membawa WberPack meraih visinya. Dengan visi dan misi yang
-                         kuat dan nilai-nilai perusahaan yang jelas, tentu akan terus menjadikan perusahaan WberPack
-                         yang terfavorit di seluruh Indonesia.
-                     </p>
-                 </div>
-             </div>
-             <div class="col-lg-6">
-                 <img src="<?php echo base_url('assets/img/3.jpg'); ?>" class="img-fluid" alt="">
-             </div>
-         </div>
-         <!-- <div class="section-title">
-                <img src="assets/img/about.jpg" alt="">
-            </div> -->
-
-     </div>
- </section><!-- End About Us Section -->
- <!-- ======= About Us Section ======= -->
- <!-- ======= Our Team Section ======= -->
- <section id="team" class="team">
-     <div class="container">
-
-         <div class="section-title">
-             <h2>Owner</h2>
-             <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                 sint
-                 consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-                 Quia fugiat sit
-                 in iste officiis commodi quidem hic quas.</p>
-         </div>
-
-         <div class="row">
-
-             <div class="col-xl-4 col-lg-6 col-md-8" data-wow-delay="0.1s">
-                 <div class="member">
-                     <img src="<?php echo base_url('assets/img/team/team-1.jpg'); ?>" class="img-fluid" alt="">
-                     <div class="member-info">
-                         <div class="member-info-content">
-                             <div class="row">
-                                 <div class="col-lg-4">
-                                     <p>
-                                         p
-                                     </p>
-                                 </div>
-                                 <div class="col-lg-4">
-                                     <p>
-                                         p
-                                     </p>
-                                 </div>
-                                 <div class="col-lg-4">
-                                     <p>
-                                         p
-                                     </p>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="social">
-                             <div class="row">
-                                 <div class="col-lg-4">
-                                     <p>
-                                         p
-                                     </p>
-                                 </div>
-                                 <div class="col-lg-4">
-                                     <p>
-                                         p
-                                     </p>
-                                 </div>
-                                 <div class="col-lg-4">
-                                     <p>
-                                         p
-                                     </p>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-xl-4 col-lg-6 col-md-8" data-wow-delay="0.1s">
-                 <div class="member">
-                     <img src="<?php echo base_url('assets/img/team/team-1.jpg'); ?>" class="img-fluid" alt="">
-                     <div class="member-info">
-                         <div class="member-info-content">
-                             <h4>William Anderson</h4>
-                             <span>CTO</span>
-                         </div>
-                         <div class="social">
-                             <a href=""><i class="icofont-twitter"></i></a>
-                             <a href=""><i class="icofont-facebook"></i></a>
-                             <a href=""><i class="icofont-instagram"></i></a>
-                             <a href=""><i class="icofont-linkedin"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-xl-4 col-lg-6 col-md-8" data-wow-delay="0.1s">
-                 <div class="member">
-                     <img src="<?php echo base_url('assets/img/team/team-1.jpg'); ?>" class="img-fluid" alt="">
-                     <div class="member-info">
-                         <div class="member-info-content">
-                             <h4>Amanda Jepson</h4>
-                             <span>Accountant</span>
-                         </div>
-                         <div class="social">
-                             <a href=""><i class="icofont-twitter"></i></a>
-                             <a href=""><i class="icofont-facebook"></i></a>
-                             <a href=""><i class="icofont-instagram"></i></a>
-                             <a href=""><i class="icofont-linkedin"></i></a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-
-         </div>
-
-     </div>
- </section><!-- End Our Team Section -->
+<div class="page-content bg-white">
+		<!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle text-center bg-pt" style="background-image:url(<?php echo base_url('assets/images/Wberpack/3.jpg'); ?>);">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry align-m text-center">
+                    <h1 class="text-white">About Us</h1>
+					<!-- Breadcrumb row -->
+					<div class="breadcrumb-row">
+						<ul class="list-inline">
+							<li><a href="<?php echo site_url('Welcome/Index'); ?>">Home</a></li>
+							<li>About Us</li>
+						</ul>
+					</div>
+					<!-- Breadcrumb row END -->
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- contact area -->
+        <div class="content-block">
+			<!-- About Services info -->
+            <div class="section-full content-inner bg-white">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-12 m-b30">
+							<div class="our-story">
+								<span>SEJARAH KAMI</span>
+								<!-- <h2 class="title">Running a <br/>successful business <br/><span class="text-primary">since 1955</span></h2> -->
+								<h4 class="title" style="color :black;">WberPack berdiri pada Tahun 2017. WberPack didirikan oleh 3 orang profesional yang memiliki
+             pengalaman di bidang paper packaging dan finance selama 16 tahun. Setelah mengalami beberapa kali kegagalan dalam berusaha, akhirnya pendiri 
+             perusahaan memanfaatkan keahlian yang ada pada bidang karton packaging dan paper core untuk mendirikan sebuah perusahaan yaitu PT. Wahana Bermuda 
+             Nusantara yang dikenal sebagai WBN dan sekarang menjadi WberPack.</p>
+								<a href="javascript:void(0);" class="site-button">Read More</a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12 m-b30 our-story-thum">
+							<img src="<?php echo base_url('assets/images/about/pic6.jpg'); ?>" class="radius-sm" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section-full content-inner bg-white video-section" style="background-image:url('<?php echo base_url('assets/images/background/bg-video.png'); ?>');">
+				<div class="container">
+					<div class="section-content">
+						<div class="row d-flex">
+							<div class="col-lg-6 col-md-12 m-b30">
+								<div class="video-bx">
+									<img src="<?php echo base_url('assets/images/about/pic5.jpg'); ?>" alt="Signature">
+									<div class="video-play-icon">
+										<a href="https://www.youtube.com/watch?v=_FRZVScwggM" class="popup-youtube video bg-primary"><i class="fa fa-play"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-12 m-b30 align-self-center video-infobx">
+								<div class="content-bx1">
+									<h2 class="m-b15 title">A company involved in<br><span class="text-primary"> service, maintenance</span></h2>
+									<p class="m-b30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>											
+									<img src="<?php echo base_url('assets/images/sign.png'); ?>" width="200" alt=""/>
+									<h4 class="m-b0">Jone Doe</h4>
+									<span class="font-14">Company Director</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- About Services info END -->
+			<!-- Counter -->
+			<div class="section-full content-inner overlay-black-dark bg-img-fix" style="background-image:url(images/background/bg1.jpg);">
+                <div class="container">
+                    <div class="section-content text-center text-white">
+                         <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+                                <div class="counter-style-5">
+                                    <div class="">
+										<span class="counter">6810</span>
+									</div>
+									<span class="counter-text">Passionate Employee</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+                                <div class="counter-style-5">
+									<div class="">
+										<span class="counter">4060</span>
+									</div>
+									<span class="counter-text">Modern Factory</span>
+								</div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+                                <div class="counter-style-5">
+									<div class="">
+										<span class="counter">3164</span>
+									</div>
+									<span class="counter-text">Factory in Worldwide</span>
+								</div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
+                                <div class="counter-style-5">
+									<div class="">
+										<span class="counter">1852</span>
+									</div>
+									<span class="counter-text">International Awards</span>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!-- Counter END -->
+			<!-- Team Section -->
+			<div class="section-full text-center bg-gray content-inner">
+				<div class="container">	
+					<div class="section-head text-black text-center">
+						<h2 class="title">Meet Our Team</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+					</div>
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="dlab-box m-b30 dlab-team1">
+								<div class="dlab-media">
+									<a href="javascript:;">
+										<img width="358" height="460" alt="" src="images/our-team/pic1.jpg">
+									</a>
+								</div>
+								<div class="dlab-info">
+									<h4 class="dlab-title"><a href="javascript:;">Nashid Martines</a></h4>
+									<span class="dlab-position">Director</span>
+									<ul class="dlab-social-icon dez-border">
+										<li><a class="fa fa-facebook" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-twitter" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-linkedin" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-pinterest" href="javascript:void(0);"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="dlab-box m-b30 dlab-team1">
+								<div class="dlab-media">
+									<a href="javascript:;">
+										<img width="358" height="460" alt="" src="images/our-team/pic2.jpg">
+									</a>
+								</div>
+								<div class="dlab-info">
+									<h4 class="dlab-title"><a href="javascript:;">Konne Backfield</a></h4>
+									<span class="dlab-position">Designer</span>
+									<ul class="dlab-social-icon dez-border">
+										<li><a class="fa fa-facebook" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-twitter" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-linkedin" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-pinterest" href="javascript:void(0);"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="dlab-box m-b30 dlab-team1">
+								<div class="dlab-media">
+									<a href="javascript:;">
+										<img width="358" height="460" alt="" src="images/our-team/pic3.jpg">
+									</a>
+								</div>
+								<div class="dlab-info">
+									<h4 class="dlab-title"><a href="javascript:;">Hackson Willingham</a></h4>
+									<span class="dlab-position">Developer</span>
+									<ul class="dlab-social-icon dez-border">
+										<li><a class="fa fa-facebook" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-twitter" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-linkedin" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-pinterest" href="javascript:void(0);"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="dlab-box m-b30 dlab-team1">
+								<div class="dlab-media">
+									<a href="javascript:;">
+										<img width="358" height="460" alt="" src="images/our-team/pic4.jpg">
+									</a>
+								</div>
+								<div class="dlab-info">
+									<h4 class="dlab-title"><a href="javascript:;">Konne Backfield</a></h4>
+									<span class="dlab-position">Manager</span>
+									<ul class="dlab-social-icon dez-border">
+										<li><a class="fa fa-facebook" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-twitter" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-linkedin" href="javascript:void(0);"></a></li>
+										<li><a class="fa fa-pinterest" href="javascript:void(0);"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Team Section END -->
+			<!-- Price Table -->
+			<div class="section-full content-inner-2 bg-white">
+				<div class="container">
+					<div class="section-head text-black text-center">
+						<h2 class="title">Pricing Table</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+					</div>
+					<div class="section-content box-sort-in button-example pricingtable-style2-area m-t80">
+						<div class="pricingtable-row">
+							<div class="row max-w1000 m-auto">
+								<div class="col-sm-12 col-md-4 col-lg-4 p-lr0">
+									<div class="pricingtable-wrapper style2 bg-white">
+										<div class="pricingtable-inner">
+											<div class="pricingtable-price"> 
+												<h4 class="font-weight-300 m-t10 m-b0">Basic</h4>
+												<div class="pricingtable-bx"><span>Free</span></div>
+											</div>
+											<p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et dolore magna siad enim aliqua</p>
+											<div class="m-t20"> 
+												<a href="javascript:void(0);" class="site-button radius-xl"><span class="p-lr30">Sign Up</span></a> 
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 col-lg-4 p-lr0">
+									<div class="pricingtable-wrapper style2 bg-primary text-white active">
+										<div class="pricingtable-inner">
+											<div class="pricingtable-price"> 
+												<h4 class="font-weight-300 m-t10 m-b0">Professional</h4>
+												<div class="pricingtable-bx"> $ <span>29</span> /  Per Installation </div>
+											</div>
+											<p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et dolore magna siad enim aliqua</p>
+											<div class="m-t20"> 
+												<a href="javascript:void(0);" class="site-button white radius-xl"><span class="p-lr30">Sign Up</span></a> 
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 col-md-4 col-lg-4 p-lr0">
+									<div class="pricingtable-wrapper style2 bg-white">
+										<div class="pricingtable-inner">
+											<div class="pricingtable-price"> 
+												<h4 class="font-weight-300 m-t10 m-b0">Extended</h4>
+												<div class="pricingtable-bx"> $  <span>29</span> /  Per Installation </div>
+											</div>
+											<p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et dolore magna siad enim aliqua</p>
+											<div class="m-t20"> 
+												<a href="javascript:void(0);" class="site-button radius-xl"><span class="p-lr30">Sign Up</span></a> 
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Price Table END -->
+			<!-- Testimonials -->
+			<div class="section-full content-inner-2 bg-gray">
+				<div class="container">
+					<div class="section-head text-black text-center">
+						<h2 class="title">Happy Customers Said</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+					</div>
+					<div class="testimonial-six owl-loaded owl-theme owl-carousel owl-none dots-style-2">
+						<div class="item">
+							<div class="testimonial-8">
+								<div class="testimonial-text">
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make.</p>
+								</div>
+								<div class="testimonial-detail clearfix">
+									<div class="testimonial-pic radius shadow"><img src="images/testimonials/pic2.jpg" width="100" height="100" alt=""></div>
+									<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimonial-8">
+								<div class="testimonial-text">
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make.</p>
+								</div>
+								<div class="testimonial-detail clearfix">
+									<div class="testimonial-pic radius shadow"><img src="images/testimonials/pic3.jpg" width="100" height="100" alt=""></div>
+									<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimonial-8">
+								<div class="testimonial-text">
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make.</p>
+								</div>
+								<div class="testimonial-detail clearfix">
+									<div class="testimonial-pic radius shadow"><img src="images/testimonials/pic1.jpg" width="100" height="100" alt=""></div>
+									<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Testimonials END -->
+		</div>
+		<!-- contact area END -->
+    </div>
+    <!-- Content END -->

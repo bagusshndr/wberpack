@@ -53,10 +53,9 @@ class Welcome extends CI_Controller
 		}
 
 
-		$this->load->view('welcome_message', $data);
-		// } else {
-		// 	redirect(site_url('Login'));
-		// }
+		// $this->load->view('welcome_messages1', $data);
+		$data['content'] = 'VHome1';
+		$this->load->view('welcome_messages1', $data);
 	}
 
 	public function VAbout()
@@ -67,9 +66,8 @@ class Welcome extends CI_Controller
 
 		$data['DataJenisProduk'] = $this->MSudi->GetData('tbl_jenis_produk');
 		$data['DataKategori'] = $this->MSudi->GetData('tbl_kategori');
-		$data['slide'] = $this->MSudi->GetData('tbl_slide');
 		$data['content'] = 'VAbout';
-		$this->load->view('welcome_message', $data);
+		$this->load->view('welcome_messages1', $data);
 		// } else {
 		// 	redirect(site_url('Login'));
 		// }
